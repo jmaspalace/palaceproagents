@@ -1,0 +1,8 @@
+name = cdi_breadcrumb
+description = "Create custom block using easy_breadcrumb functions."
+package = CDI
+core = 7.x
+dependencies[] = easy_breadcrumb
+
+
+

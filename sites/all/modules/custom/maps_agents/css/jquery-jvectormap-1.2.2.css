@@ -1,0 +1,42 @@
+.jvectormap-label {
+    position: absolute;
+	z-index:99999;
+    display: none;
+    background: url(images/label_pop.png) top left no-repeat;
+    color: #004484;
+    font-family: sans-serif, Verdana;
+    font-size: 12px;
+    padding: 3px;
+	width:110px;
+	height:30px;
+	font-family: 'Roboto', sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	padding-top:8px;
+	font-weight: 500;
+	
+}
+
+.jvectormap-zoomin, .jvectormap-zoomout {
+    position: absolute;
+    left: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #292929;
+    padding: 3px;
+    color: white;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    line-height: 10px;
+    text-align: center;
+}
+
+.jvectormap-zoomin {
+    top: 10px;
+}
+
+.jvectormap-zoomout {
+    top: 30px;
+}

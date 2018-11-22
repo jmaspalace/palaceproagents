@@ -1,0 +1,818 @@
+@charset "utf-8";
+/* CSS Document */
+/*FONTS*/
+@font-face {
+    font-family: 'misoregular';
+    src: url('../fonts/miso-webfont.eot');
+    src: url('../fonts/miso-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/miso-webfont.woff2') format('woff2'),
+         url('../fonts/miso-webfont.woff') format('woff'),
+         url('../fonts/miso-webfont.ttf') format('truetype'),
+         url('../fonts/miso-webfont.svg#misoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'avenir';
+	src: url('../fonts/avenir/avenir.eot');
+	src: url('../fonts/avenir/avenir.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/avenir/avenir.woff2') format('woff2'),
+	url('../fonts/avenir/avenir.woff') format('woff'),
+	url('../fonts/avenir/avenir.ttf') format('truetype'),
+	url('../fonts/avenir/avenir.svg#misoregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'misobold';
+    font-family: 'misobold';
+    src: url('../fonts/miso-bold-webfont.eot');
+    src: url('../fonts/miso-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/miso-bold-webfont.woff2') format('woff2'),
+         url('../fonts/miso-bold-webfont.woff') format('woff'),
+         url('../fonts/miso-bold-webfont.ttf') format('truetype'),
+         url('../fonts/miso-bold-webfont.svg#misobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'misolight';
+    src: url('../fonts/miso-light-webfont.eot');
+    src: url('../fonts/miso-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/miso-light-webfont.woff2') format('woff2'),
+         url('../fonts/miso-light-webfont.woff') format('woff'),
+         url('../fonts/miso-light-webfont.ttf') format('truetype'),
+         url('../fonts/miso-light-webfont.svg#misolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_Gotham-Light';
+	src: url('../fonts/gotham//Gotham-Light.eot');
+	src: local('☺'), url('../fonts/gotham/Gotham-Light.woff') format('woff'), url('../fonts/gotham/Gotham-Light.ttf') format('truetype'), url('../fonts/gotham/Gotham-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_Gotham-Light';
+	src: url('../fonts/gotham//Gotham-Light.eot');
+	src: local('☺'), url('../fonts/gotham/Gotham-Light.woff') format('woff'), url('../fonts/gotham/Gotham-Light.ttf') format('truetype'), url('../fonts/gotham/Gotham-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_Gotham-Medium';
+	src: url('../fonts/gotham/Gotham-Medium.eot');
+	src: local('☺'), url('../fonts/gotham/Gotham-Medium.woff') format('woff'), url('../fonts/gotham/Gotham-Medium.ttf') format('truetype'), url('../fonts/gotham/Gotham-Medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_Gotham-Book';
+	src: url('../fonts/gotham/Gotham-Book.eot');
+	src: local('☺'), url('../fonts/gotham/Gotham-Book.woff') format('woff'), url('../fonts/gotham/Gotham-Book.ttf') format('truetype'), url('../fonts/gotham/Gotham-Book.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/*CUSTOM*/
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+sup{
+    position: relative;
+}
+.node-type-landing-palace-experience {
+	background: #000;
+	position: relative;
+}
+#full_container_landing .slick-slider img{
+	width: 100%;
+	min-height: 537px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.node-type-landing-palace-experience .front-book {
+	display: none !important;
+}
+
+#full_container_landing{
+	background-image: url(../img/image-fondo.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+#full_container_landing .clear{
+	clear: both;
+	float: none;
+}
+/*BANNER*/
+#full_container_landing .banner{
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+	height: 529px;
+	z-index: 2;
+	overflow: hidden;
+}
+#full_container_landing .banner .banner_container{
+	width: 970px;
+	margin: auto;
+}
+#full_container_landing .banner .column_left{
+	width: 485px;
+	height: 561px;
+	float: left;
+	padding-top: 30px;
+	margin-bottom: 40px;
+}
+#full_container_landing .banner .logo_top{
+	margin-left: 0px;
+}
+#full_container_landing .banner .promo_container{
+	margin: 25px auto 50px auto;
+	text-align: center;
+	width: 485px;
+	color: #fff;
+	position: relative;
+}
+#full_container_landing .banner .promo_logo{
+	font-family: 'misoregular';
+	float: left;
+}
+#full_container_landing .banner .promo_logo img{
+	position: relative;
+}
+#full_container_landing .banner .promo_logo h2{
+	margin-top: 5px;
+	font-size: 39.48px;
+	font-family: 'Conv_Gotham-Light';
+	color: #fff;
+	margin-bottom: 0;
+}
+#full_container_landing .banner .promo_logo h2 sup{
+  font-size: 20px;
+  top: -8px;
+}
+#full_container_landing .banner .promo_logo h3{
+	font-size: 35.85px;
+	font-family: 'misoregular';
+	color: #fff;
+	text-align: center;
+	margin-top: 0;
+}
+#full_container_landing .banner .promo_logo h5{
+	margin-top: 0px;
+	font-size: 19.94px;
+	font-family: 'avenir';
+	color: #fff;
+	line-height: 16px;
+}
+
+#full_container_landing .banner .promo_logo p {
+	color: #fff;
+	text-align: center;
+	margin: 0;
+}
+
+#full_container_landing .banner .promo_info{
+	padding: 0px 80px;
+}
+#full_container_landing .banner .promo_info p{
+	font-size: 17px;
+	color: #fff;
+	line-height: normal;
+	text-align: center;
+}
+#full_container_landing .banner .promo_info p sup{
+	top: -5px;
+    font-size: 13px;
+}
+#full_container_landing .banner .promo_button{
+}
+#full_container_landing .banner .promo_button a{
+	line-height: 23px !important;
+}
+#full_container_landing .banner .call_to_action{
+	background-image: url(../images/bgButton.jpg);
+	background-repeat: repeat-x;
+	background-position: left center;
+	font-family: 'misolight';
+	color: #fff;
+	display: block;
+	text-align: center;
+	padding: 8px 0;
+	text-decoration: none;
+	font-size: 29px;
+	position: relative;
+	bottom: -66px;
+}
+#full_container_landing .banner .call_to_action strong{
+	font-family: 'misoregular';
+	font-size: 30px;
+}
+#full_container_landing .banner .column_right{
+	overflow-y: hidden;
+	width: 485px;
+	height: 591px;
+	float: left;
+	margin-bottom: 40px;
+	position: relative;
+}
+#full_container_landing .banner .column_right img{
+	width: 100%;
+}
+/*INFORMATION*/
+#full_container_landing .promo_specs{
+	clear: both;
+	width: 970px;
+	margin: auto;
+}
+#full_container_landing sup{
+	font-size: 10px;
+	top: -4px;
+}
+#full_container_landing .promo_specs .promo_specs_title{
+	margin-bottom: 30px;
+}
+#full_container_landing .promo_specs .promo_specs_title h1{
+    font-family: 'Conv_Gotham-Medium';
+    font-size: 30px;
+    color: #fffffe;
+    text-align: center;
+    line-height: 1;
+	font-weight: normal;
+}
+#full_container_landing .promo_specs .promo_specs_title p{
+	color: #fff;
+    font-family: 'avenir';
+    font-size: 15px;
+    line-height: 16px;
+    padding-right: 30%;
+    position: relative;
+    font-style: normal;
+	margin-top: 44px;
+	margin-bottom: 52px;
+}
+#full_container_landing .promo_specs .promo_specs_title p span{
+	position: absolute;
+    left: 70.5%;
+    top: 0;
+    line-height: 28px;
+    font-size: 30px;
+    font-family: 'Conv_Gotham-Medium';
+    color: #ffe400;
+	padding-left: 12px;
+    border-left: 1px solid #ffe400;
+	height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#full_container_landing .promo_specs .promo_specs_title strong{
+	font-family: 'misobold';
+}
+
+/*REGION TOP*/
+#full_container_landing .promo_specs .promo_block_top{
+	clear: both;
+	color: #6d6e71;
+	font-size: 14px;
+}
+#full_container_landing .promo_specs .promo_block_top .region_left{
+	width: 485px;
+	float: left;
+	padding: 0px 20px 20px 15px;
+
+}
+#full_container_landing .promo_specs .promo_block_top .region_left h1{
+	margin-bottom: 13px;
+	font-size: 15px;
+	font-family: 'avenir_45_bookregular';
+	color: #ffe400;
+	font-weight: normal;
+}
+#full_container_landing .promo_specs .promo_block_top .region_left h1 strong{
+	font-weight: 100;
+}
+#full_container_landing .promo_specs .promo_block_top .region_left p{
+	margin: 10px 0;
+	color: #fff;
+	line-height: normal;
+	font-size: 13px;
+}
+#full_container_landing .promo_specs .promo_block_top .region_left ul{
+}
+#full_container_landing .promo_specs .promo_block_top .region_left ul li{
+	padding-left: 25px;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 13px;
+	line-height: 16px;
+    color: #fff;
+    font-family: 'avenir';
+    position: relative;
+    width: 91%;
+}
+#full_container_landing .promo_specs .promo_block_top .region_left ul li:before{
+	content: '';
+    width: 4px;
+    height: 4px;
+    float: left;
+    display: inline-block;
+    border-radius: 100%;
+    background: #ffe400;
+    position: absolute;
+    margin-right: 23px;
+    left: 0;
+	top: 5px;
+}
+#full_container_landing .promo_specs .promo_block_top .region_right{
+	float: left;
+	/*width: 475px;*/
+	width: 485px;
+	padding-top: 0px;
+}
+#full_container_landing .promo_specs .promo_block_top .region_right strong{
+	font-weight: bold;
+}
+#full_container_landing .promo_specs .promo_block_top .images_blocks{
+	margin: 10px 0;
+    color: #ffffff;
+    line-height: normal;
+    font-size: 13px;
+}
+#full_container_landing .promo_specs .promo_block_top .image_container{
+	float: left;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+#full_container_landing .promo_specs .promo_block_top .image_container a{
+	width: 100%;
+}
+#full_container_landing .promo_specs .promo_block_top .image_container img{
+	width: 100%;
+}
+#full_container_landing .promo_specs .promo_block_top .image_container.image-double a {
+	width: 49%;
+	text-decoration: none;
+}
+#full_container_landing .promo_specs .promo_block_top .image_container.image-double a span{
+	width: 100%;
+    padding-left: 5px;
+    color: #dadada;
+    font-size: 12px;
+    font-family: 'avenir';
+    text-decoration: none;
+    line-height: 15px;
+	text-align: left;
+	margin-top: 5px;
+}
+/*#full_container_landing .promo_specs .promo_block_top .image_container_small{
+	float: left;
+	margin-top: 2px;
+}
+#full_container_landing .promo_specs .promo_block_top .image_container_small img{
+	width: 121px;
+}*/
+#full_container_landing .promo_specs .promo_block_top .image_container_large{
+	width: 484px;
+	height: 180px;
+	text-align: center;
+}
+#full_container_landing .promo_specs .promo_block_top .image_container_large img{
+	width: 85.5%;
+	margin: auto;
+	display: block;
+}
+
+#full_container_landing .destination_wedding p{
+	margin: 10px 0;
+    color: #ffffff;
+    line-height: normal;
+    font-size: 13px;
+}
+
+#full_container_landing .destination_wedding p a{
+	color: #ffe400;
+	font-family: 'avenir';
+	font-size: 14px;
+}
+
+/*REGION BOTTOM*/
+#full_container_landing .promo_specs .promo_block_bottom{
+	clear: both;
+	color: #6d6e71;
+	font-size: 12px;
+	margin: 45px 0 0 0;
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_right{
+	width: 465px;
+	float: left;
+	padding: 0px 25px 15px 0px;
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_right h1{
+	margin-bottom: 13px;
+    font-size: 15px;
+    font-family: 'avenir_45_bookregular';
+    color: #ffe400;
+    font-weight: normal;
+	margin-top: 0;
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_right p{
+	margin: 10px 0;
+	color: #fff;
+	line-height: 14px;
+	font-size: 13px;
+	font-family: 'avenir';
+	margin-bottom: 18px;
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_right p strong{
+	font-weight: 100;
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_right a{
+	color: #ededed;
+	font-family: 'avenir';
+	text-decoration: underline;
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_right ul{
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_right ul li{
+	padding-left: 25px;
+    margin-bottom: 15px;
+    display: inline-block;
+    font-size: 13px;
+    color: #fff;
+    font-family: 'avenir';
+    position: relative;
+    width: 91%;
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_right ul li:before{
+	content: '';
+    width: 4px;
+    height: 4px;
+    float: left;
+    display: inline-block;
+    border-radius: 100%;
+    background: #ffe400;
+    position: absolute;
+    margin-right: 23px;
+    left: 0;
+    top: 5px;
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_left{
+	float: left;
+	/*width: 475px;*/
+	width: 485px;
+}
+#full_container_landing .promo_specs .promo_block_bottom .region_left strong{
+	font-weight: bold;
+}
+#full_container_landing .promo_specs .promo_block_bottom .images_blocks{
+	vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+#full_container_landing .promo_specs .promo_block_bottom .image_container{
+	float: left;
+	width: 242px;
+}
+#full_container_landing .promo_specs .promo_block_bottom .image_container.image-media{
+	width: inherit;
+	margin-right: 15px;
+}
+#full_container_landing .promo_specs .promo_block_bottom .image_container img{
+	width: 100%;
+}
+/*
+#full_container_landing .promo_specs .promo_block_bottom .image_container_small{
+	float: left;
+	margin-top: 1px;
+}
+#full_container_landing .promo_specs .promo_block_bottom .image_container_small img{
+	width: 121px;
+}*/
+#full_container_landing .promo_specs .promo_block_bottom .image_container_large{
+	width: 484px;
+	height: 180px;
+	text-align: center;
+}
+#full_container_landing .promo_specs .promo_block_bottom .image_container_large img{
+	width: 99.5%;
+	margin: auto;
+	display: block;
+}
+
+/*FOOTER*/
+#full_container_landing .footer_block{
+	background: rgba(255, 255, 255, 0.10);
+	clear: both;
+	padding: 0 0 30px 0;
+	color: #fff;
+	font-size: 12px;
+	border-bottom: 1px solid #007600;
+    border-top: 1px solid #007600
+}
+#full_container_landing .footer_block a{
+	color: #ffe400;
+	font-family: 'avenir';
+	font-size: 14px;
+}
+
+#full_container_landing .footer_block .footer_container{
+	width: 970px;
+	margin: auto;
+	padding-top: 43px;
+}
+#full_container_landing .footer_block .footer_container h1{
+	font-family: 'Conv_Gotham-Book';
+	font-size: 11.98px;
+	margin-bottom: 20px;
+	color:#ffe400;
+}
+#full_container_landing .footer_block .footer_image{
+	float: left;
+}
+#full_container_landing .footer_block .footer_description{
+	float: left;
+	/*width: 475px;
+	padding: 20px;*/
+	width: 100%;
+}
+#full_container_landing .footer_block .footer_description p{
+	padding-left: 0;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    font-family: 'avenir';
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: #fff;
+    line-height: 15px;
+}
+#full_container_landing .footer_block .footer_description p a{
+    font-size: 14px;
+    font-family: 'avenir';
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: #ffe400;
+}
+#full_container_landing .footer_block .footer_description table{
+	background-color: transparent;
+	width: 100%;
+	border: none;
+}
+#full_container_landing .footer_block .footer_description table td{
+	vertical-align: top;
+	padding: 0 20px;
+	width: 50%;
+}
+#full_container_landing .footer_block .footer_description table tr{
+	background-color: transparent !important;
+	border: none;
+}
+#full_container_landing .footer_block .footer_description ul{
+
+}
+#full_container_landing .footer_block .footer_description ul li{
+	padding-left: 15px;
+	line-height: 14px;
+	display: block;
+	text-align: left;
+	font-size: 14px;
+    font-family: 'avenir';
+	position: relative;
+	margin-bottom: 5px;
+}
+#full_container_landing .footer_block .footer_description ul li:before{
+	content: '';
+    width: 4px;
+    height: 4px;
+    float: left;
+    display: inline-block;
+    border-radius: 100%;
+    background: #fff;
+    position: absolute;
+    margin-right: 23px;
+    left: 0;
+    top: 5px;
+}
+
+#full_container_landing .subfooter_block{
+	background-color: rgba(0, 0, 0, 0.36);
+    padding: 95px 0px 41px 0px;
+	font-size: 12px;
+	font-family: 'avenir';
+}
+#full_container_landing .subfooter_block .subfooter_container{
+	color: #fff;
+	width: 970px;
+	margin: auto;
+	text-align: center;
+}
+
+/* landing palace experience */
+.node-type-landing-palace-experience #header,
+.node-type-landing-palace-experience .footer,
+.node-type-landing-palace-experience .footer-second,
+.node-type-landing-palace-experience #breadcrumb,
+.node-type-landing-palace-experience #cl-right-page {
+	display: none;
+}
+.node-type-landing-palace-experience #box-content{
+	margin-bottom: 0;
+}
+.button_schedule a{
+	text-align: center;
+	display: block;
+	width: 80%;
+	padding: 10px 5px;
+	border-radius: 4px;
+	color: #fff;
+	margin: 20px auto 0;
+	font-family: 'misobold';
+	text-decoration: none;
+	font-size: 20px;
+	background-image: url(../images/bgButton.jpg);
+	background-repeat: repeat-x;
+	background-position: left center;
+}
+
+/*ANIMATIONS*/
+
+.gallery1, .gallery2{
+	opacity: 0;
+}
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeBackground { from {opacity:0; } to {opacity:1; } }
+@-moz-keyframes fadeBackground { from {opacity:0; } to {opacity:1; } }
+@keyframes fadeBackground { from {opacity:0; } to {opacity:1; } }
+.fade-background {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeBackground ease-in 1;  /* call our keyframe named fadeBackground, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeBackground ease-in 1;
+	animation:fadeBackground ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:0.5s;
+	-moz-animation-duration:0.5s;
+	animation-duration:0.5s;
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadePromo { from {top:-10px; opacity:0; } to {top:0px; opacity:1; } }
+@-moz-keyframes fadePromo { from {top:-10px; opacity:0; } to {top:0px; opacity:1; } }
+@keyframes fadePromo { from {top:-10px; opacity:0; } to {top:0px; opacity:1; } }
+.fade-promo {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadePromo ease-in 1;  /* call our keyframe named fadePromo, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadePromo ease-in 1;
+	animation:fadePromo ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:0.5s;
+	-moz-animation-duration:0.5s;
+	animation-duration:0.5s;
+
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeBanner { from {top:-20px; opacity:0; } to {top: 0px; opacity:1; } }
+@-moz-keyframes fadeBanner { from {top:-20px; opacity:0; } to {top: 0px; opacity:1; } }
+@keyframes fadeBanner { from {top:-20px; opacity:0; } to {top: 0px; opacity:1; } }
+.fade-banner {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeBanner ease-in 1;  /* call our keyframe named fadeBanner, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeBanner ease-in 1;
+	animation:fadeBanner ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:0.5s;
+	-moz-animation-duration:0.5s;
+	animation-duration:0.5s;
+
+	-webkit-animation-delay: 0.7s;
+	-moz-animation-delay: 0.7s;
+	animation-delay: 0.7s;
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes callAnimation { from {bottom:-20px; opacity:0; } to {bottom: -35px; opacity:1; } }
+@-moz-keyframes callAnimation { from {bottom:-20px; opacity:0; } to {bottom: -35px; opacity:1; } }
+@keyframes callAnimation { from {bottom:-20px; opacity:0; } to {bottom: -35px; opacity:1; } }
+.call-animation {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:callAnimation ease-in 1;  /* call our keyframe named callAnimation, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:callAnimation ease-in 1;
+	animation:callAnimation ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:0.3s;
+	-moz-animation-duration:0.3s;
+	animation-duration:0.3s;
+
+	-webkit-animation-delay: 1.3s;
+	-moz-animation-delay: 1.3s;
+	animation-delay: 1.3s;
+}
+
+
+
+.slider-conference {
+	max-width: 100%;
+	width: 100%;
+	margin: 0 auto;
+	border-bottom: 1px solid #007600;
+}
+
+.slider-conference .slick-arrow {
+	position: absolute;
+	bottom: 30px;
+	z-index: 9;
+	cursor: pointer;
+	width: 42px;
+	height: 42px;
+	border: none;
+	font-size: 0;
+	background-color: #000;
+}
+
+.slider-conference .slick-arrow.slick-prev {
+	right: 405px;
+	background: #000 url(../img/slide-arrow.png) center no-repeat ;
+}
+.slider-conference .slick-track .slick-slide img{
+	width: 100%;
+	min-height: 537px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider-conference .slick-arrow.slick-next {
+	background: #000 url(../img/slide-arrow.png) center no-repeat;
+	transform: rotate(180deg);
+	right: 355px;
+}
+
+.blue-square1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+	display: none;
+}
+
+.blue-square2 {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+	display: none;
+}
+
+.water-bg {
+	background: rgba(0, 0, 0, 0.4);
+	background-size: cover; 
+	padding: 50px 0;
+}
+
+.cbp-qtrotator blockquote p {
+	font-family: 'avenir_medium' !important;
+	font-size: 18px !important; 
+}
+
+.quotes-container {
+	background: #025d8b !important;
+}
+
+.footer-img {
+    float: right;
+}
+
+
+@media only screen and (max-width: 1600px) {
+	.cbp-qtrotator .cbp-qtcontent {
+		width: 700px !important;
+	}
+}
+#full_container_landing .subfooter_block .subfooter_container small{
+    font-size: 100%;
+}

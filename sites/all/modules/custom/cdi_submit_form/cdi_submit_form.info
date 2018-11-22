@@ -1,0 +1,6 @@
+name = Submit Form
+description = Send specific forms.
+package = CDI
+core = "7.x"
+
+scripts[] = js/hideclient.js

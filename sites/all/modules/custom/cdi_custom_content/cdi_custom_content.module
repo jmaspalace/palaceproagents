@@ -1,0 +1,57 @@
+<?php
+function cdi_custom_content_block_info()
+{
+  $blocks = array();
+  $blocks['content_resort'] = array(
+    'info' => t('Content for resort tabs'),
+  );
+  $blocks['content_contact_us'] = array(
+    'info' => t('Content for contact us tabs'),
+  );
+  $blocks['content_resources_tools'] = array(
+    'info' => t('Content for resources and tools tabs'),
+  );
+  $blocks['content_weddings'] = array(
+    'info' => t('Content for weddings tabs'),
+  );
+  return $blocks;
+}
+
+function cdi_custom_content_block_view($delta='')
+{
+  $block = array();
+  switch ($delta) {
+    case 'content_resort':
+      $block['content'] = theme("content_resort");
+      break;
+    case 'content_contact_us':
+      $block['content'] = theme("content_contact_us");
+      break;
+    case 'content_resources_tools':
+      $block['content'] = theme("content_resources_tools");
+      break;
+    case 'content_weddings':
+      $block['content'] = theme("content_weddings");
+      break;
+  }
+  return $block;
+}
+
+function cdi_custom_content_theme()
+{
+  return array(
+    'content_resort' => array(
+      'template' => 'templates/content_resort',
+    ),
+    'content_contact_us' => array(
+      'template' => 'templates/content_contact_us',
+    ),
+    'content_resources_tools' => array(
+      'template' => 'templates/content_resources_tools',
+    ),
+    'content_weddings' => array(
+      'template' => 'templates/content_weddings',
+    ),
+  );
+}
+?>

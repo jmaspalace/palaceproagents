@@ -1,0 +1,163 @@
+<?php
+
+function cdi_menu_block_info(){
+  $blocks = array();
+  $blocks['cdi_menu'] = array(
+    'info' => t('Pro Agents menu'),
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+
+  return $blocks;
+}
+
+function cdi_menu_theme()
+{
+  return array(
+    'cdi_menu' => array(
+      'arguments' => array('items' => '', 'header'=>array(), 'search'=>'', 'url_base'=>''),
+      'template' => 'templates/cdi_menu',
+    ),
+  );
+}
+
+function cdi_menu_block_view($delta=''){
+  $block = array();
+  switch ($delta) {
+    case 'cdi_menu':
+      $block['content'] = _cdi_menu_content();
+      break;
+  }
+  return $block;
+}
+
+function _cdi_menu_content()
+{
+  $url_base = base_path(). path_to_theme();
+  $items = _cdi_menu_get_items_menu();
+  $header = _cdi_custom_get_translation_node(21);
+
+  $block_search = module_invoke('custom_search_blocks', 'block_view', '1');
+
+  $html = theme("cdi_menu", array("items" => $items, "header"=>$header, 'block_search'=>$block_search, 'url_base' => $url_base));
+  return $html;
+}
+
+function _cdi_menu_get_items_menu()
+{
+  //Se carga el menu principal con traducciones
+  $links_main_menu = menu_tree_all_data('main-menu', null, 1);
+  $links_main_menu = i18n_menu_localize_tree($links_main_menu);
+  //Se carga el menu principal con traducciones
+
+  //Se carga la url actual
+  $current = current_path();
+  $alias = _cdi_custom_get_url($current);
+
+  $build = '';
+
+  foreach ($links_main_menu as $link)
+  {
+    $link = $link['link'];
+    if (!$link['hidden'])
+    {
+      $region = isset($link['options']['attributes']['region']) ? $link['options']['attributes']['region']:'';
+      $market = cdi_custom_get_market_by_language();
+      if ( ( $region != '' && strpos($region, $market) !== false ) || $region == '')
+      {
+        $link_path = _cdi_custom_get_url($link['link_path']);
+        $link_title = $link['title'];
+        $class = (isset($link['options']['attributes']['class']) && is_array($link['options']['attributes']['class'])) ? implode(' ', $link['options']['attributes']['class']).' ' : '';
+        if (strpos($alias, $link_path) === 0)
+        {
+          $class = 'selected';
+        }
+
+        $build.= "<li>";
+        if ($link['link_path'] == '<nolink>')
+        {
+          $build.= '<span class="'.$class.'nolink">'.$link_title.'</span>';
+        }
+        else
+        {
+          $build.= "<a class='".$class."' href='". $link_path ."'>". $link_title ."</a>";
+        }
+        $children = _cdi_get_children_menu($link);
+        $contenSubMenu = '';
+        $submenu = '';
+        if (count($children) > 0)
+        {
+          $contenSubMenu.= '<span
+          class="btn-submenu"></span><ul class="submenu"><div class="container"><span class="back-submenu">Back</span><li class="col-lg-12 col-sm-12 col-md-12 image-general"><span class="title">'.$link_title.'</span>';
+          $image = _cdi_get_image_menu($link['mlid']);
+          if (isset($image))
+          {
+            $contenSubMenu.= '<figure><img src="'.file_create_url($image).'" /></figure>';
+          }
+          $contenSubMenu .= '</li>';
+          foreach ($children AS $key => $chil)
+          {
+            $link = $chil['link'];
+            if (!$link['hidden'])
+            {
+              $region = isset($link['options']['attributes']['region']) ? $link['options']['attributes']['region'] : '';
+              if (($region != '' && strpos($region, $market) !== FALSE) || $region == '')
+              {
+                $link_path = _cdi_custom_get_url($link['link_path']);
+                $link_title = $link['title'];
+                $class = (isset($link['options']['attributes']['class']) && is_array($link['options']['attributes']['class'])) ? implode(' ', $link['options']['attributes']['class']).' ' : '';
+                if (strpos($alias, $link_path) === 0)
+                {
+                  $class .= 'selected';
+                }
+                $submenu .= "<li class='col-lg-12 col-sm-12 col-md-12  image-link'>";
+                $data_content = isset($link_path) ? $link_path : '';
+                $submenu .= "<a data-content='".$data_content."' class='" . $class . "' href='" . $link_path . "'>" . $link_title . "</a>";
+                $image = _cdi_get_image_menu($link['mlid']);
+                if (isset($image))
+                {
+                  $submenu .= "<figure><img src='" . file_create_url($image) . "' /></figure>";
+                }
+                $submenu .= "</li>";
+              }
+            }
+          }
+          $contenSubMenu.= $submenu.'</div></ul>';
+        }
+        if ($submenu !== '')
+        {
+          $build .= $contenSubMenu;
+        }
+        $build.="</li>";
+      }
+    }
+  }
+
+  return $build;
+}
+
+function _cdi_get_children_menu($parent)
+{
+  $parameters = array(
+    'active_trail' => array($parent['plid']),
+    'only_active_trail' => FALSE,
+    'min_depth' => $parent['depth']+1,
+    'max_depth' => $parent['depth']+1,
+    'conditions' => array('plid' => $parent['mlid']),
+  );
+  $children = menu_build_tree('main-menu', $parameters);
+  $children = i18n_menu_localize_tree($children);
+  return $children;
+}
+
+function _cdi_get_image_menu($mlid)
+{
+  $data = menu_link_load($mlid);
+  $uri = null;
+  if (isset($data['options']['content']['image']))
+  {
+    $imageId = $data['options']['content']['image'];
+    $file = file_load($imageId);
+    $uri = $file->uri;
+  }
+  return $uri;
+}

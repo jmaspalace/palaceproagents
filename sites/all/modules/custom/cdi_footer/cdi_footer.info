@@ -1,0 +1,8 @@
+name = cdi_footer
+description = "Create custom footer block."
+package = CDI
+core = 7.x
+
+
+
+

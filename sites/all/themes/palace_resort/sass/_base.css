@@ -1,0 +1,375 @@
+@font-face {
+  font-family: 'Miso-Light';
+  src: url("../fonts/Miso-Light.eot");
+  src: url("../fonts/Miso-Light.woff2") format("woff2"), url("../fonts/Miso-Light.woff") format("woff"), url("../fonts/Miso-Light.ttf") format("truetype"), url("../fonts/Miso-Light.svg#Miso-Light") format("svg"), url("../fonts/Miso-Light.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ghotam-Ultra';
+  src: url("../fonts/GothamUltra.eot");
+  src: url("../fonts/GothamUltra.woff2") format("woff2"), url("../fonts/GothamUltra.woff") format("woff"), url("../fonts/GothamUltra.ttf") format("truetype"), url("../fonts/GothamUltra.svg#Miso-Light") format("svg"), url("../fonts/GothamUltra.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Ghotam-Book';
+  src: url("../fonts/Gotham-Book.eot");
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff"), url("../fonts/Gotham-Book.ttf") format("truetype"), url("../fonts/Gotham-Book.svg#Miso-Light") format("svg"), url("../fonts/Gotham-Book.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 44, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.container-fluid {
+  padding: 0;
+  position: relative;
+  width: 100%;
+  float: left; }
+
+/* line 50, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.flexslider {
+  border: none;
+  border-radius: 0;
+  box-shadow: none; }
+
+/* line 56, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.flex-direction-nav a.flex-next:before, .flex-direction-nav a.flex-prev:before {
+  content: " "; }
+
+/* line 60, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+blockquote {
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  border-left: none; }
+
+/* line 69, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.fancybox-title-float-wrap .child {
+  background: none;
+  font-size: 1rem;
+  font-weight: 100; }
+
+/* line 76, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.fancybox-opened .fancybox-skin {
+  box-shadow: none;
+  border-radius: 0; }
+
+/* line 81, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus, input:focus {
+  outline: none; }
+
+/* line 87, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+html {
+  font-size: 18px; }
+  @media screen and (max-width: 1200px) {
+    /* line 87, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    html {
+      font-size: 14px; } }
+  @media screen and (max-width: 992px) {
+    /* line 87, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    html {
+      font-size: 13px; } }
+  @media screen and (max-width: 767px) {
+    /* line 87, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    html {
+      font-size: 15px; } }
+
+/* line 100, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #000;
+  color: #fff;
+  font-size: 100%; }
+
+/* line 107, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+p, li {
+  font-weight: 100;
+  font-size: .88rem;
+  line-height: 1.1rem;
+  letter-spacing: .06rem; }
+  /* line 112, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  p span.color-green, li span.color-green {
+    color: #00ad95; }
+
+/* line 117, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+h1, h2, h3, h4, h5, h6, a {
+  font-family: "Miso-Light";
+  font-weight: 100; }
+
+/* line 123, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.content ul {
+  padding-left: 25px;
+  display: table;
+  width: 100%; }
+  /* line 127, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .content ul li {
+    list-style: none;
+    position: relative;
+    line-height: 1.2rem;
+    margin-bottom: 0.4rem;
+    padding-left: 15px; }
+    /* line 133, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    .content ul li:before {
+      position: absolute;
+      left: 0;
+      top: 7px;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background-color: #00ad95;
+      content: ''; }
+
+/* line 147, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+h2 {
+  color: #00ad95;
+  font-size: 2.7rem;
+  line-height: 2.5rem;
+  position: relative; }
+  /* line 152, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  h2 span {
+    color: #fff; }
+  /* line 155, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  h2.line {
+    padding-bottom: 0.7rem; }
+    /* line 157, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    h2.line:after {
+      background: #00ad95 none repeat scroll 0 0;
+      bottom: 0;
+      content: " ";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 4.4rem; }
+    /* line 166, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    h2.line.center {
+      padding-bottom: 1.2rem;
+      text-align: center; }
+      /* line 169, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+      h2.line.center:after {
+        left: calc(50% - 2.2rem);
+        position: absolute;
+        width: 4.4rem; }
+  /* line 176, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  h2.crown {
+    background: url(../images/icon-big-logo.png) no-repeat center top;
+    background-size: auto 25px;
+    padding-top: 32px;
+    margin-bottom: 1.1rem;
+    padding-bottom: 1.1rem !important; }
+
+/* line 184, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.img-responsive {
+  display: inline-block; }
+
+/* line 187, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.back-submenu {
+  display: none; }
+
+/* line 190, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.colums-2 {
+  -webkit-column-count: 2;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 2;
+  /* Firefox */
+  column-count: 2;
+  -webkit-column-gap: 2rem;
+  /* Chrome, Safari, Opera */
+  -moz-column-gap: 2rem;
+  /* Firefox */
+  column-gap: 2rem;
+  display: block !important; }
+
+/* line 200, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.enlace {
+  border: solid 1px white;
+  text-transform: uppercase;
+  color: white;
+  padding: 0.8rem 1.3rem;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-top: 0.8rem;
+  display: inline-block;
+  font-size: 1.3rem;
+  line-height: 1.2rem;
+  margin-right: 0.5rem; }
+  /* line 212, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .enlace:hover, .enlace:focus {
+    text-decoration: none;
+    background: white;
+    color: #00ad95;
+    text-decoration: none; }
+  /* line 218, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .enlace.enlace-green {
+    border-color: #00ad95;
+    color: #00ad95; }
+    /* line 221, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    .enlace.enlace-green:hover, .enlace.enlace-green:focus {
+      background: #00ad95;
+      color: white; }
+  /* line 226, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .enlace.enlace-orange {
+    border-color: #f25a04;
+    color: #f25a04; }
+    /* line 229, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    .enlace.enlace-orange:hover, .enlace.enlace-orange:focus {
+      background: #f25a04;
+      color: white; }
+  /* line 234, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .enlace.enlace-blue {
+    border-color: transparent;
+    color: white;
+    background-color: #012d49; }
+    /* line 238, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    .enlace.enlace-blue:hover, .enlace.enlace-blue:focus {
+      background: white;
+      color: #012d49; }
+
+/* line 245, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.flexslider {
+  margin-bottom: 0;
+  background-color: transparent; }
+  /* line 248, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .flexslider ul.slides {
+    margin: 0;
+    padding: 0; }
+    /* line 251, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    .flexslider ul.slides li {
+      list-style: none; }
+      /* line 253, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+      .flexslider ul.slides li .container-video {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        width: 100%; }
+        /* line 259, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+        .flexslider ul.slides li .container-video iframe {
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          border: none; }
+  /* line 271, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .flexslider .flex-direction-nav a.flex-next, .flexslider .flex-direction-nav a.flex-prev {
+    background: url("../images/arrow-prev.png") no-repeat center;
+    width: 35px;
+    height: 70px;
+    opacity: 1 !important;
+    left: 3.3rem; }
+    @media screen and (max-width: 992px) {
+      /* line 271, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+      .flexslider .flex-direction-nav a.flex-next, .flexslider .flex-direction-nav a.flex-prev {
+        left: 2rem; } }
+    @media screen and (max-width: 767px) {
+      /* line 271, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+      .flexslider .flex-direction-nav a.flex-next, .flexslider .flex-direction-nav a.flex-prev {
+        display: none; } }
+  /* line 285, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .flexslider .flex-direction-nav a.flex-next {
+    background: url("../images/arrow-next.png") no-repeat center;
+    right: 3.3rem;
+    left: auto; }
+    @media screen and (max-width: 992px) {
+      /* line 285, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+      .flexslider .flex-direction-nav a.flex-next {
+        right: 2rem; } }
+
+/* line 295, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.fancybox-nav {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  margin-top: -30px; }
+
+/* Datepicker */
+/* line 304, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.datepicker {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: #f8f8f8;
+  font-weight: 100;
+  box-shadow: none;
+  font-weight: 100;
+  background: #00ad95; }
+  /* line 315, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .datepicker * {
+    border-radius: 0 !important;
+    border: none; }
+  /* line 321, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .datepicker table td {
+    border-radius: 0; }
+    /* line 323, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    .datepicker table td.active {
+      background: #00ad95 !important; }
+  /* line 328, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .datepicker table thead th {
+    color: white;
+    font-family: "Miso-Light";
+    font-weight: 100;
+    font-size: 1rem; }
+    /* line 333, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    .datepicker table thead th:hover {
+      background: #00ad95 !important; }
+  /* line 338, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .datepicker table tbody {
+    background: white; }
+
+/* line 345, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.overflow {
+  max-height: 300px; }
+
+/* line 349, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.fijo {
+  max-height: 250px;
+  position: fixed; }
+
+/* line 354, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.ui-widget.ui-widget-content {
+  border: none; }
+
+/* line 358, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+  border: none;
+  background: #fff;
+  color: #00ad95; }
+
+/* line 364, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.ui-menu .ui-menu-item {
+  background: #f8f8f8; }
+
+/* line 420, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+.modal-content {
+  background-color: #000;
+  padding: 3rem 2rem 2rem;
+  border-radius: 0; }
+  /* line 424, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .modal-content.widget-container {
+    text-align: center; }
+  /* line 427, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .modal-content .enlace {
+    padding: .5rem .95rem;
+    color: #00ad95;
+    border-color: #00ad95; }
+    /* line 431, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    .modal-content .enlace.enlace-green {
+      background-color: #00ad95;
+      color: #fff; }
+      /* line 434, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+      .modal-content .enlace.enlace-green:hover {
+        background-color: #fff;
+        color: #00ad95; }
+  /* line 440, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+  .modal-content .close {
+    opacity: 1;
+    position: absolute;
+    right: 15px;
+    top: 10px; }
+    /* line 445, C:/xampp/htdocs/Proagents/sites/all/themes/palace_resort/sass/_base.scss */
+    .modal-content .close span {
+      font-size: 28px;
+      font-weight: 100;
+      color: #fff; }
+
+/*# sourceMappingURL=_base.css.map */

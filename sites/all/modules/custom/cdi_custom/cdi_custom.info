@@ -1,0 +1,8 @@
+name = cdi_custom
+description = "Create custom blocks."
+package = CDI
+core = 7.x
+
+
+
+

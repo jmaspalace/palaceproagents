@@ -1,0 +1,139 @@
+<?php
+$pathTheme = drupal_get_path('theme', 'palace_resort');
+require_once($pathTheme.'/libraries/Mobile_Detect/Mobile_Detect.php');
+
+function cdi_custom_init()
+{
+  $market = cdi_custom_get_market();
+  global $base_url;
+
+  $requestUri = $_SERVER['REQUEST_URI'];
+
+  //Se valida para que no falle el autocomplete del modulo nodequeue http://localhost/new-proagents/index.php?q=en/ctools/autocomplete/node/Progr
+  if (strpos($requestUri, '/index.php?q=') === FALSE && strpos($requestUri, '/pass?hs=') === FALSE)
+  {
+    if (strpos($requestUri, '/es') === FALSE && strpos($requestUri, '/en') === FALSE && strpos($requestUri, '/ca') === FALSE)
+    {
+      if ($market == 'LATAM')
+      {
+        $url = $base_url . '/es';
+      }
+      else if ($market == 'CA')
+      {
+        $url = $base_url . '/ca';
+      }
+      else
+      {
+        $url = $base_url . '/en';
+      }
+      drupal_goto($url);
+    }
+  }
+}
+
+function cdi_custom_get_market()
+{
+  $market = isset($_SERVER['HTTP_CF_IPCOUNTRY']) ? $_SERVER['HTTP_CF_IPCOUNTRY'] : (isset($_SERVER['GEOIP_COUNTRY_CODE']) ? $_SERVER['GEOIP_COUNTRY_CODE'] : 'US');
+  $latam_array=["CO", "AR", "BO", "CL", "CR", "CU", "EC", "SV", "GT", "HT", "HN", "NI", "PA", "PY", "PE", "DO", "UY", "VE", "MX"];
+  if (in_array($market, $latam_array))
+  {
+    $market = 'LATAM';
+  }
+  else if ($market != 'CA')
+  {
+    // Si no es latama ni cadana, el valor por defecto del mercado debe ser estados unidos
+    $market = 'US';
+  }
+  return $market;
+}
+
+function cdi_custom_get_market_by_language()
+{
+  global $language;
+  $lang = $language->language;
+  if ($lang == 'es')
+  {
+    return 'LATAM';
+  }
+  else if ($lang == 'en-gb')
+  {
+    return 'CA';
+  }
+  else
+  {
+    return 'US';
+  }
+}
+
+function cdi_custom_is_mobile()
+{
+  //Variable de dispositivo
+  $detect = new Mobile_detect;
+  if ($detect->isMobile())
+  {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+function cdi_custom_is_tablet()
+{
+  //Variable de dispositivo
+  $detect = new Mobile_detect;
+  if ($detect->isTablet())
+  {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+function cdi_custom_validate_market($markets)
+{
+  $market = cdi_custom_get_market_by_language();
+  $taxonomies = explode (',', $markets);
+  foreach ($taxonomies AS $key => $taxonomy){
+    $term = taxonomy_term_load($taxonomy);
+    if ($term -> field_initials['und'][0]['value'] == $market)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+function _cdi_custom_get_market_taxonomy($markets)
+{
+  $markets_id = array();
+  foreach ($markets AS $key => $market)
+  {
+    $markets_id[] = $market['tid'];
+  }
+  return implode(',', $markets_id);
+}
+
+function _cdi_custom_get_url($link)
+{
+  global $language;
+  $url = url($link, array('language' => $language));
+  return $url;
+}
+
+function _cdi_custom_get_translation_node($nid)
+{
+  global $language;
+  $node = node_load($nid);
+  $idi_trad = translation_node_get_translations($node->tnid);
+  if (isset($idi_trad))
+  {
+    foreach ($idi_trad AS $key => $trad)
+    {
+      if ($language->language == $key)
+      {
+        $node = node_load($trad->nid);
+        return $node;
+      }
+    }
+  }
+  return $node;
+}
+?>

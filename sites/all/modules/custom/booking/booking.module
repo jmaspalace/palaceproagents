@@ -1,0 +1,33 @@
+<?php
+
+function booking_block_info()
+{
+    $blocks = array();
+    $blocks['proagents_booking'] = array(
+        'info' => t('Book Now Widget'),
+        'cache' => DRUPAL_CACHE_CUSTOM,
+    );
+    return $blocks;
+}
+
+function booking_theme()
+{
+    return array(
+        'proagents_booking' => array(
+            'template' => 'booking-interna',
+        ),
+    );
+}
+
+function booking_block_view($delta = '')
+{
+    $block = array();
+	$url_base = base_path(). path_to_theme();
+    switch ($delta)
+    {
+        case 'proagents_booking':
+            $block[ 'content' ] = theme( "proagents_booking" , array('url_base' => $url_base) );
+            break;
+    }
+    return $block;
+}

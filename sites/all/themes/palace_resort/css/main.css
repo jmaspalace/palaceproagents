@@ -1,0 +1,383 @@
+/*section rates*/
+/* line 16, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+.block-ta-rates {
+  padding-bottom: 65px; }
+  /* line 18, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .block-ta-rates .img-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center; }
+  /* line 26, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .block-ta-rates .text-center {
+    position: relative;
+    margin-top: 33px; }
+  /* line 30, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .block-ta-rates .list-rates {
+    position: relative;
+    display: table; }
+    /* line 33, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    .block-ta-rates .list-rates:after {
+      position: absolute;
+      width: 1px;
+      height: 91%;
+      top: 48px;
+      display: block;
+      background: #00ad95;
+      left: 50%; }
+      @media screen and (max-width: 767px) {
+        /* line 33, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .list-rates:after {
+          display: none; } }
+  /* line 46, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .block-ta-rates .rates-table {
+    position: relative;
+    margin-top: 50px; }
+    /* line 49, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    .block-ta-rates .rates-table table {
+      position: relative;
+      border: 1px solid #005760;
+      padding: 15px;
+      border-collapse: separate;
+      width: 100%;
+      margin: 0 auto; }
+      /* line 58, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+      .block-ta-rates .rates-table table thead td {
+        font-family: "Miso-Light";
+        font-size: .87rem;
+        font-weight: 300;
+        padding: 12px 12px 12px 14px;
+        text-align: center;
+        color: #00ad95;
+        position: relative;
+        max-width: 166px;
+        font-size: 1.22rem; }
+        /* line 68, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .rates-table table thead td:before {
+          content: '';
+          width: 97%;
+          height: 100%;
+          background: rgba(0, 87, 96, 0.2);
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        /* line 78, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .rates-table table thead td:first-child {
+          color: transparent;
+          background: 0 0; }
+          /* line 81, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          .block-ta-rates .rates-table table thead td:first-child:before {
+            display: none; }
+        /* line 86, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .rates-table table thead td:last-child:before {
+          width: 100%; }
+      /* line 94, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+      .block-ta-rates .rates-table table tbody tr td {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: .87rem;
+        font-weight: 300;
+        border-top: 1px solid rgba(0, 173, 149, 0.15);
+        padding: 12px 9px 12px 9px;
+        text-align: center;
+        color: #00ad95;
+        position: relative;
+        max-width: 97px;
+        font-size: .78rem; }
+        /* line 105, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .rates-table table tbody tr td img {
+          width: 100%; }
+        /* line 108, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .rates-table table tbody tr td:before {
+          content: '';
+          width: 97%;
+          height: 100%;
+          background: rgba(0, 87, 96, 0.2);
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        /* line 118, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .rates-table table tbody tr td p {
+          max-width: 131px;
+          margin: 0 auto;
+          font-size: .75rem;
+          line-height: 19px;
+          color: #fff; }
+        /* line 125, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .rates-table table tbody tr td:first-child {
+          width: 22%;
+          padding: 6px 9px 8px 0; }
+          /* line 128, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          .block-ta-rates .rates-table table tbody tr td:first-child:before {
+            display: none; }
+        /* line 132, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .rates-table table tbody tr td:last-child {
+          padding: 12px 5px 12px 5px; }
+          /* line 135, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          .block-ta-rates .rates-table table tbody tr td:last-child p {
+            max-width: initial;
+            margin: 0; }
+          /* line 139, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          .block-ta-rates .rates-table table tbody tr td:last-child:before {
+            width: 100%; }
+  /* line 150, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .block-ta-rates .inludes-left {
+    float: left;
+    width: 45%;
+    margin-left: 5%;
+    margin-top: 52px; }
+    @media screen and (max-width: 767px) {
+      /* line 150, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+      .block-ta-rates .inludes-left {
+        width: 100%;
+        margin-top: 20px; } }
+    /* line 160, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    .block-ta-rates .inludes-left h2 {
+      margin-bottom: 52px; }
+    /* line 163, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    .block-ta-rates .inludes-left ul {
+      position: relative;
+      padding-left: 3px;
+      list-style: none; }
+      /* line 167, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+      .block-ta-rates .inludes-left ul li {
+        position: relative;
+        padding-left: 25px;
+        line-height: 25px; }
+        /* line 171, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .inludes-left ul li:before {
+          position: absolute;
+          left: 0;
+          top: 7px;
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          background-color: #00ad95;
+          content: ''; }
+  /* line 184, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .block-ta-rates .inludes-right {
+    float: left;
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 52px; }
+    @media screen and (max-width: 767px) {
+      /* line 184, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+      .block-ta-rates .inludes-right {
+        width: 100%;
+        margin-left: 5%;
+        margin-top: 20px; } }
+    /* line 194, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    .block-ta-rates .inludes-right h2 {
+      margin-bottom: 52px; }
+    /* line 197, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    .block-ta-rates .inludes-right ul {
+      position: relative;
+      list-style: none;
+      padding-left: 3px; }
+      /* line 201, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+      .block-ta-rates .inludes-right ul li {
+        position: relative;
+        padding-left: 25px;
+        line-height: 25px; }
+        /* line 205, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        .block-ta-rates .inludes-right ul li:before {
+          position: absolute;
+          left: 0;
+          top: 7px;
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          background-color: #00ad95;
+          content: ''; }
+
+/* line 220, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+.block-ta-rates-final {
+  margin-top: 5rem; }
+  /* line 222, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .block-ta-rates-final p {
+    width: 80%;
+    display: block;
+    margin: 0 auto 23px auto; }
+    @media screen and (max-width: 767px) {
+      /* line 222, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+      .block-ta-rates-final p {
+        font-size: .88rem;
+        width: 90%; } }
+    /* line 230, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    .block-ta-rates-final p a {
+      color: #00ad95;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+
+/*Modal booking*/
+/* line 239, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+#tabbed_box_1 .modal-content {
+  background: #000;
+  border-radius: 0; }
+  /* line 243, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  #tabbed_box_1 .modal-content button.close {
+    font-size: 28px;
+    font-weight: 100;
+    opacity: 1;
+    margin-right: 10px; }
+    /* line 248, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    #tabbed_box_1 .modal-content button.close span {
+      color: #fff; }
+  /* line 253, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  #tabbed_box_1 .modal-content .tabs {
+    list-style: none;
+    display: table;
+    padding-left: 25px; }
+    /* line 257, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    #tabbed_box_1 .modal-content .tabs li {
+      float: left; }
+      /* line 259, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+      #tabbed_box_1 .modal-content .tabs li a {
+        font-size: 1rem;
+        padding: .4rem 1rem; }
+        /* line 262, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        #tabbed_box_1 .modal-content .tabs li a.active {
+          background: #00ad95;
+          color: #fff; }
+  /* line 269, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  #tabbed_box_1 .modal-content #content_2 {
+    display: none; }
+  /* line 272, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  #tabbed_box_1 .modal-content .widget-content {
+    padding: 10px 25px; }
+    /* line 275, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    #tabbed_box_1 .modal-content .widget-content table {
+      padding-top: 15px;
+      border-top: 1px solid #fff;
+      border-collapse: separate; }
+      /* line 279, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+      #tabbed_box_1 .modal-content .widget-content table tr {
+        width: 50%;
+        float: left;
+        margin-bottom: 5px; }
+        /* line 283, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        #tabbed_box_1 .modal-content .widget-content table tr td {
+          width: 100%;
+          font-size: .85rem;
+          font-weight: 100;
+          display: inline-block;
+          max-width: 100%;
+          margin-bottom: 5px; }
+          /* line 290, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          #tabbed_box_1 .modal-content .widget-content table tr td input[type="text"] {
+            width: 220px;
+            height: 30px;
+            font-size: .88rem;
+            color: #333;
+            padding-left: 12px;
+            font-weight: 400; }
+          /* line 298, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          #tabbed_box_1 .modal-content .widget-content table tr td .filter-option {
+            color: #333; }
+          /* line 301, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          #tabbed_box_1 .modal-content .widget-content table tr td ul {
+            list-style: none; }
+          /* line 304, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          #tabbed_box_1 .modal-content .widget-content table tr td .ui-datepicker-trigger {
+            display: none; }
+        /* line 308, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+        #tabbed_box_1 .modal-content .widget-content table tr.widget-inlines {
+          width: 100%; }
+          /* line 310, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          #tabbed_box_1 .modal-content .widget-content table tr.widget-inlines tbody {
+            border: 0; }
+          /* line 313, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+          #tabbed_box_1 .modal-content .widget-content table tr.widget-inlines .item-booking {
+            width: 100%;
+            float: left;
+            border: none;
+            padding-top: 0; }
+            /* line 318, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+            #tabbed_box_1 .modal-content .widget-content table tr.widget-inlines .item-booking tr {
+              margin-bottom: 0; }
+  /* line 330, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  #tabbed_box_1 .modal-content .widget-button a {
+    float: left;
+    width: 43%;
+    border: none;
+    padding: 5px;
+    color: #fff;
+    background: #00ad95;
+    margin-top: 0;
+    padding: 6px 5px;
+    margin-right: 10%;
+    border-radius: 0px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: Miso-Light;
+    text-align: center;
+    margin-top: 21px; }
+
+/*Dialog booking*/
+/* line 351, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+.ui-dialog-buttons {
+  background: #fff;
+  top: 50% !important;
+  z-index: 1056;
+  position: fixed !important; }
+  /* line 356, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .ui-dialog-buttons button {
+    float: left;
+    width: 43%;
+    border: none;
+    padding: 5px;
+    color: #fff;
+    background: #00ad95;
+    margin-top: 0;
+    padding: 6px 5px;
+    margin-right: 10%;
+    border-radius: 0px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: Miso-Light;
+    text-align: center;
+    margin-top: 21px; }
+  /* line 373, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .ui-dialog-buttons .ui-dialog-titlebar {
+    position: relative;
+    float: left;
+    width: 100%; }
+  /* line 379, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .ui-dialog-buttons .ui-dialog-buttonset button {
+    width: auto;
+    padding: 5px 25px;
+    margin: 10px;
+    float: right; }
+  /* line 386, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .ui-dialog-buttons .ui-dialog-titlebar-close {
+    color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    margin: 0;
+    height: 25px;
+    overflow: hidden; }
+    /* line 395, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+    .ui-dialog-buttons .ui-dialog-titlebar-close:before {
+      content: 'X';
+      color: #fff;
+      position: relative;
+      top: -8px; }
+  /* line 404, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .ui-dialog-buttons span {
+    color: #00ad95;
+    margin: 10px 0px 1px 10px;
+    display: block;
+    font-family: "Miso-Light";
+    font-size: 1.8rem; }
+  /* line 411, D:/Documentos/PROYECTOS/DESARROLLOS/htdocs/PROAGENTS/sites/all/themes/palace_resort/css/main.scss */
+  .ui-dialog-buttons #error {
+    color: #000;
+    margin: 10px 0px 1px 10px;
+    display: block;
+    font-size: 0.88rem; }
+
+/*# sourceMappingURL=main.css.map */

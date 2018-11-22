@@ -1,0 +1,442 @@
+/****mapa ***/
+#box-content{
+	margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.page {
+    margin: 0 auto;
+    position: relative;
+    width: 980px;
+}
+
+#box-content #cl-left {
+    margin: 29px 1rem 0;
+    width: 70%;
+    position: relative;
+}
+
+#mapa {
+	position: relative;
+	width: 100%;
+	height: 550px;
+	margin: 0 auto;
+}
+#mapa.maps-latam{
+    transform: scale(1.45) translate(-89px, -57px);
+}
+#mapa .jvectormap-zoomin, #mapa .jvectormap-zoomout {
+	display: none;
+}
+#mapa img.map {
+	left: -7px;
+	position: absolute;
+	top: 54px;
+	width: 100%;
+}
+.agents {
+	position: absolute;
+	width: 40%;
+    height: auto;
+    min-height: 76%;
+	z-index: 2;
+	left: 100% !important;
+   	top: 0.2rem !important;
+	margin-left: 3rem;
+    border: 1px solid #00ad95;
+	padding: 10px;
+	overflow: hidden;
+
+}
+.agents .slider{
+	width: 100% !important;
+    height: auto !important;
+    min-height: 100%;
+
+}
+.agents .slider.animated{
+	transition-property: transform;
+  	transition-duration: 0.5s;
+}
+.agent-content {
+	width: 100%;
+}
+.agent-content .img-agent {
+	float: left;
+	margin-right: 10px;
+	width: 100%;
+	height: 225px;
+    object-fit: cover;
+    object-position: top center;
+}
+.agent-content .txt-agents {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+	background: rgba(0, 87, 96, 0.20);
+	margin-top: 0.5rem;
+	padding: 5px;
+}
+.agent-content .txt-agents h3 {
+	color: #00ad95;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin-bottom: 3px;
+    font-weight: normal;
+	margin-top: 0;
+}
+.agent-content .txt-agents span {
+    display: block;
+	font-size: 0.7rem;
+    margin: 0;
+    line-height: 13px;
+    color: #fff !important;
+    margin-bottom: 11px;
+}
+#bdms .controls{
+	position: absolute;
+    top: 10rem;
+    left: 99%;
+    width: 53%;
+	display: none;
+}
+#bdms .controls .slideprev{
+	display: block;
+    position: relative;
+    float: left;
+	cursor: pointer;
+}
+#bdms .controls .slidenext{
+	display: block;
+    position: relative;
+	position: relative;
+    float: right;
+	cursor: pointer;
+}
+.agent-content .txt-agents span:before{
+	content: '';
+	color: #4c3f3f;
+    margin-bottom: 12px;
+    margin-top: 11px;
+    display: block;
+    width: 30%;
+    height: 1px;
+    background: #00ad95;
+}
+.agent-content .txt-agents p {
+	font-size: 0.7rem;
+    margin: 0;
+    line-height: 8px;
+    color: #fff !important;
+    margin-bottom: 11px;
+}
+.agent-content .txt-agents p.email-mapa{
+    overflow-wrap: break-word;
+    line-height: 13px;
+}
+.agent-content .txt-agents p.email-mapa label{
+	margin-bottom: 0;
+}
+.agent-content .txt-agents p.mt5{
+	color: #00ad95 !important;
+    line-height: 14px;
+}
+.agent-content .txt-agents p label{
+	display: block;
+}
+#agent-1 {
+	top: 200px;
+	left: 0;
+}
+#bdms {
+	width: 650px;
+	position: relative;
+}
+.green {
+    color: #007F75 !important;
+}
+.mt5 {
+    margin-top: 5px !important;
+}
+
+#bdms > p {
+   	margin: 0 auto;
+    text-align: center;
+    width: auto;
+    position: absolute;
+    left: #007F75 !important;
+    left: 100%;
+    top: 2rem;
+    margin-left: 3rem;
+    width: 34%;
+    height: 75%;
+	color: #00ad95;
+    border: 1px solid #00ad95;
+    padding: 15px;
+	background: rgba(0, 87, 96, 0.30);
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.population{
+    font-size: 50px;
+}
+/*Buscador*/
+#travel_box {
+	width: 100%;
+	background-color: #007e7a;
+	height: 66px;
+	display: none;
+	position: relative;
+	z-index: 101;
+}
+
+.wrapper_travel_box {
+	/*width:964px;*/
+	text-align: center;
+}
+
+.text_travel_box {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	display: inline-block;
+}
+
+.campo_travel_box {
+	display: inline-block;
+}
+
+.campo_travel_box select {
+	background: #FFF;
+	width: 350px;
+	padding: 2px 10px;
+	font-size: 12px;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	height: 25px;
+	/*  -webkit-appearance: none;*/
+	margin: 11px 11px 0;
+	color: #999;
+	font-family: initial;
+}
+#bdms #select-map{
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+	.text_travel_box {
+		margin: 3px;
+	}
+
+	.campo_travel_box select {
+		padding: 2px 10px;
+		margin: 0px 11px 0;
+	}
+}
+@media screen and (max-width: 1080px) and (min-width: 992px) {
+    #bdms {
+        width: 620px;
+    }
+    .page{
+        width: 969px;
+    }
+}
+@media screen and (max-width: 991px) and (min-width: 768px){
+    .page{
+        width: 969px;
+    }
+     #bdms {
+        width: 500px;
+    }
+    #bdms .controls img{
+        width: 32px;
+    }
+    #bdms .controls{
+        left: 99%;
+        width: 51%;
+    }
+    .agent-content .img-agent{
+        height: 180px;
+    }
+    .agents {
+        min-height: 64%;
+    }
+}
+@media screen and (max-width: 768px){
+    #bdms #select-map{
+        display: block;
+        width: 100%;
+        margin: 25px auto 0px auto;
+        display: block;
+        border: 1px solid #008a77;
+        background: #000;
+        text-align: center;
+        text-transform: uppercase;
+        color: #008a77;
+        padding: 5px;
+        position: relative;
+        border-radius: 0;
+        -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    .content-select{
+        position: relative;
+        width: 75%;
+        margin: 0 auto;
+    }
+    #bdms .content-select:before{
+        content: '';
+        position: absolute;
+        width: 33px;
+        height: 100%;
+        background: #008a77 url(images/icon-more-map.png) no-repeat center;
+        pointer-events: none;
+        display: block;
+        right: 0;
+        z-index: 2;
+        top: 0;
+    }
+    .page{
+        width: 90%;
+    }
+    #box-content #cl-left{
+        width: 100%;
+        margin: 0;
+    }
+    #bdms{
+        width: 100%;
+        height: 650px;
+        height: -webkit-fill-available;
+    }
+    #mapa{
+        display: none;
+    }
+    .agents{
+        margin: 0 auto;
+        left: 0 !important;
+        right: 0;
+        width: 75%;
+        top: 3rem !important;
+        min-height: 90%;
+        max-width: 280px;
+    }
+    #bdms .controls{
+        left: 0;
+        width: 100%;
+    }
+    #bdms .controls img{
+        width: 34px;
+    }
+
+    .agent-content .txt-agents h3{
+        font-size: 1rem;
+    }
+    .agent-content .txt-agents p{
+        font-size: 1rem;
+        line-height: 11px;
+    }
+    #bdms > p{
+        left: 0;
+        right: 0;
+        top: 3rem;
+        width: 75%;
+        margin-left: auto;
+    }
+}
+
+/* Slider Mapa */
+
+/* image replacement */
+.graphic, .prevBtn, .nextBtn, #slider1prev, #slider1next {
+	margin: 0;
+	padding: 0;
+	display: block;
+	overflow: hidden;
+	text-indent: -8000px;
+}
+/* Easy Slider */
+
+.slider ul, .slider li,  #slider2 ul, #slider2 li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 100% !important;
+}
+#slider2 {
+	margin-top: 1em;
+}
+.slider li, #slider2 li {
+	/* 
+			define width and height of list item (slide)
+			entire slider area will adjust according to the parameters provided here
+		*/ 
+	overflow: hidden;
+	width:100% !important;
+}
+.prevBtn, .nextBtn,  #slider1next, #slider1prev {
+	display: block;
+	width: 20px;
+	height: 26px;
+	position: absolute;
+	left: -25px;
+	top: 62px;
+	z-index: 1000;
+}
+.nextBtn, #slider1next {
+	left: 322px;
+}
+.prevBtn a, .nextBtn a,  #slider1next a, #slider1prev a {
+	display: block;
+	position: relative;
+	width: 20px;
+	height: 26px;
+	background: url(images/flechas.png) no-repeat -1px -1px;
+}
+.prevBtn a:hover, .nextBtn a:hover,  #slider1next a:hover, #slider1prev a:hover {
+	background: url(images/flechas.png) no-repeat -1px -30px;
+}
+.nextBtn a, #slider1next a {
+	background: url(images/flechas.png) no-repeat -28px -1px;
+}
+.nextBtn a:hover, #slider1next a:hover {
+	background: url(images/flechas.png) no-repeat -28px -30px;
+}
+/* numeric controls */	
+
+ol#controls {
+	margin: 1em 0;
+	padding: 0;
+	height: 28px;
+}
+ol#controls li {
+	margin: 0 10px 0 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 28px;
+	line-height: 28px;
+}
+ol#controls li a {
+	float: left;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #ccc;
+	background: #DAF3F8;
+	color: #555;
+	padding: 0 10px;
+	text-decoration: none;
+}
+ol#controls li.current a {
+	background: #5DC9E1;
+	color: #fff;
+}
+ol#controls li a:focus, .prevBtn a:focus, .nextBtn a:focus {
+	outline: none;
+}
+
+/* Fin Slider Mapa */

@@ -1,0 +1,156 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function maps_agents_theme() {
+  $themes = array(
+    'maps_agents_custom_maps' => array(
+      'arguments' => array('data' => array(), 'taxonomy'=>array()),
+      'template' => 'themes/maps-agents-custom-maps',
+    ),
+    // 'maps_agents_bloque_filtrar' => array(
+    // 'arguments' => array('taxonomy' => array()),
+    // 'template' => 'themes/bloque-filtrar',
+    // ),
+  );
+  return $themes;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function maps_agents_block_info() {
+  $blocks = array();
+
+  $blocks['maps_agents_custom_maps'] = array(
+    'info' => t('Bloque que muestra el mapa de USA y lo agentes de cada estado. Adicionando un banner para buscar'),
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+  // $blocks['maps_agents_bloque_filtrar'] = array(
+  // 'info' => t('Bloque que filtra por estados de USA.'),
+  // 'cache' => DRUPAL_CACHE_PER_ROLE,
+  // );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function maps_agents_block_view($delta = '') {
+  $blocks = array();
+
+  switch ($delta) {
+    case 'maps_agents_custom_maps':
+      $blocks['content'] = maps_agents_custom_maps();
+      break;
+    // case 'maps_agents_bloque_filtrar':
+    // $blocks['content'] = maps_agents_bloque_filtrar();
+    //
+    // break;
+  }
+  return $blocks;
+}
+
+/**
+ * Esta funcion muestra el mapa de USA con los agentes cargados desde el CMS
+ */
+function maps_agents_custom_maps() {
+  //Declaracion de variables
+  $html = "";
+  //Con esta consulta extraemos todos los agentes creados
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid'));
+  $market = cdi_custom_get_market_by_language();
+  if ($market == 'LATAM')
+  {
+    $query->condition('n.type', 'agents_of_latam', '=');
+  }
+  elseif ($market == 'CA')
+  {
+    $query->condition('n.type', 'agents_of_canada', '=');
+  }
+  else
+  {
+    $query->condition('n.type', 'maps_agents', '=');
+  }
+  $result = $query->execute();
+  //Guardamos todo en la variable $nodes
+  $nodes = $result->fetchAll();
+  $agents=array();
+  if(count($nodes) > 0)
+  {
+    foreach ($nodes as $key => $value)
+    {
+      $agent=node_load($value->nid);
+      $states= _maps_agents_get_field_market($agent, $market);
+      $agents[][$states]=$agent;
+    }
+  }
+
+  $html = theme("maps_agents_custom_maps", array("data" => $agents, "taxonomy"=>''));
+
+  return $html;
+}
+
+function _maps_agents_get_field_market($agent, $market)
+{
+  $statesTerm = array();
+  if ($market == 'LATAM')
+  {
+    $statesTerm = $agent->field_states_of_agents_latam['und'];
+  }
+  elseif ($market == 'CA')
+  {
+    $statesTerm = $agent->field_states_of_agents['und'];
+  }
+  else
+  {
+    $statesTerm = $agent->maps_agents_states['und'];
+  }
+
+  $states = '';
+  foreach ($statesTerm AS $state)
+  {
+    $partes = explode("/", taxonomy_term_load($state['tid'])->name);
+    $states.=$partes[0]." ";
+  }
+
+  return $states;
+}
+
+
+/**
+ * Esta funcion el bloque para filtrar por estados de USA
+ */
+function _maps_agents_get_taxonomy() {
+  //Declaracion de variables
+  $taxonomy = array();
+  $taxonomy_name="states";
+  // $html = "";
+  //Buscamos los estados
+  $temp = taxonomy_vocabulary_machine_name_load($taxonomy_name);
+
+  $query=db_select('field_data_maps_agents_states', 'fdmas');
+  $query->addField('fdmas', 'maps_agents_states_tid');
+  $query->condition('fdmas.bundle', 'maps_agents', '=');
+  $query->orderBy('maps_agents_states_tid', 'ASC');
+  $query->distinct();
+
+  $result = $query->execute();
+
+  $array_tid=array();
+  foreach ($result as $record) {
+    // Do something with each $record
+    array_push($array_tid, $record->maps_agents_states_tid);
+  }
+
+  //$taxonomy = taxonomy_get_tree($temp->vid);
+  $taxonomy = taxonomy_term_load_multiple($array_tid);
+  //Creamos el bloque HTML
+  //$html = theme('maps_agents_bloque_filtrar', array('taxonomy' => $taxonomy));
+
+  return $taxonomy;
+}
+?>

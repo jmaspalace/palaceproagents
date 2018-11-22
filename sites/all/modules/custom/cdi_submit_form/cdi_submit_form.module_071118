@@ -1,0 +1,422 @@
+<?php
+require_once('php-mailer/class.phpmailer.php');
+date_default_timezone_set('America/Bogota');
+
+/**
+ * Implements hook_menu().
+ */
+function cdi_submit_form_menu()
+{
+  $items['form/redemption_form'] = array
+  (
+    'title' => 'Get Result Redemption Form',
+		'page callback' => 'submit_form_send_info', 
+		'access arguments' => array('access content'), 
+		'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function throw_message($status, $message, $element = null)
+{
+  echo json_encode
+  ( array
+    (
+      "status" => $status,
+      "message" => $message,
+      "element" => $element
+    )
+  );
+}
+
+function submit_form_send_info()
+{
+  $result=FALSE;
+  $message = "Error processing request";
+	
+	$agent_name=$_POST['agent_name'];
+	$travel_agency=$_POST['travel_agency'];
+	$address=$_POST['address'];
+	$state=$_POST['state'];
+	$phone=$_POST['phone'];
+	$country=$_POST['country'];
+	$agency=$_POST['agency'];
+	$e_mail=$_POST['e_mail'];
+	$city=$_POST['city'];
+	$zip=$_POST['zip'];
+	$fax=$_POST['fax'];
+	$preferred_resort=$_POST['preferred_resort'];
+	$preferred_travel_date_for_agent_arr=$_POST['preferred_travel_date_for_agent_arr'];
+	$preferred_travel_date_for_agent_dep=$_POST['preferred_travel_date_for_agent_dep'];
+	$agent_companion_name=$_POST['agent_companion_name'];
+	$if_traveling_with_children_please_list_ages=$_POST['if_traveling_with_children_please_list_ages'];
+	$of_adults_in_room=$_POST['of_adults_in_room'];
+	$of_children_in_room=$_POST['of_children_in_room'];
+	$bedding=$_POST['bedding'];
+	
+	$clients=$_POST['clients'];
+	$emails=explode("#", base64_decode($_POST['sendEmail']));
+	array_pop($emails);
+	$idForm=$_POST['id_form'];
+  $next_serial= _cdi_submit_form_get_serial($idForm);
+  try
+  {
+    $lastId = db_insert('webform_submissions')
+      ->fields(array(
+        'nid' => $idForm,
+        'submitted' => time(),
+        'serial' => $next_serial,
+        'remote_addr' => get_real_ip()
+      ))->execute();
+    //$querySubmit="INSERT INTO {webform_submissions} (nid, submitted, serial, remote_addr) VALUES (".$idForm.", ".time().", ".$next_serial.", '".get_real_ip()."')";
+    //$nid = db_query($querySubmit);
+    //$lastId = Database::getConnection()->lastInsertId();
+
+    $values = array(
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 1,
+        'data'=> ''.$agent_name.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 2,
+        'data'=> ''.$travel_agency.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 3,
+        'data'=> ''.$address.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 4,
+        'data'=> ''.$state.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 5,
+        'data'=> ''.$phone.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 6,
+        'data'=> ''.$country.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 7,
+        'data'=> ''.$agency.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 8,
+        'data'=> ''.$e_mail.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 9,
+        'data'=> ''.$city.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 10,
+        'data'=> ''.$zip.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 11,
+        'data'=> ''.$fax.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 12,
+        'data'=> ''.$preferred_resort.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 13,
+        'data'=> ''.$preferred_travel_date_for_agent_arr.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 14,
+        'data'=> ''.$preferred_travel_date_for_agent_dep.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 15,
+        'data'=> ''.$agent_companion_name.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 16,
+        'data'=> ''.$if_traveling_with_children_please_list_ages.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 17,
+        'data'=> ''.$of_adults_in_room.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 18,
+        'data'=> ''.$of_children_in_room.''
+      ),
+      array(
+        'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => 19,
+        'data'=> ''.$bedding.''
+      ),
+    );
+    try
+    {
+      $query = db_insert('webform_submitted_data')->fields(array('nid', 'sid', 'cid', 'data'));
+      foreach ($values as $record)
+      {
+        $query->values($record);
+      }
+      $query->execute();
+
+      $resultClients=inser_info_client($idForm, $lastId, $clients);
+      if ($resultClients)
+      {
+        $prox_serial = (int)$next_serial + 1;
+        db_update('webform')->fields(array('next_serial' => $prox_serial))->condition('nid', $idForm, '=')->execute();
+        $message = create_message($clients, date('Y-m-d'));
+        envia_mail("Travel Agent", $emails, $message, "Ready Sell Stay");
+        $message = "Request successfully sent";
+        $result=TRUE;
+      }
+      else
+      {
+        $num_deleted = db_delete('webform_submitted_data')->condition('sid', $lastId)->execute();
+        $num_deleted = db_delete('webform_submissions')->condition('sid', $lastId)->execute();
+        $message = "Non-Stored Customer Information";
+        $result=FALSE;
+      }
+    }
+    catch (Exception $e)
+    {
+      $num_deleted = db_delete('webform_submissions')->condition('sid', $lastId)->execute();
+      $message = "Not stored in the \"submitted data\" table --> ".serialize($e->getMessage());
+      $result=FALSE;
+    }
+  }
+  catch (Exception $e)
+  {
+    $message = "Not stored in the \"submission\" table -->".serialize($e->getMessage());
+    $result=FALSE;
+  }
+	throw_message($result, $message);
+	exit ;
+}
+
+function _cdi_submit_form_get_serial($nid)
+{
+  $query = db_select('webform', 'w');
+  $query->fields('w', array('next_serial'));
+  $query->condition('w.nid', $nid, '=');
+
+  $result = $query->execute();
+
+  $serial = $result->fetchField(0);
+
+  return $serial;
+}
+
+function inser_info_client($idForm, $lastId, $infoClient)
+{
+  $values=array();
+	$result=FALSE;
+	for ($i=0; $i < count($infoClient); $i++)
+	{
+	  $cid=20;
+		for ($j=0; $j < count($infoClient[$i]) ; $j++)
+		{
+		  $data=array(
+		    'nid' => $idForm,
+        'sid' => $lastId,
+        'cid' => $cid,
+        'no' => $i,
+        'data'=> ''.$infoClient[$i][$j].''
+      );
+		  $cid++;
+		  array_push($values, $data);
+		}
+	}
+	try
+  {
+    $query = db_insert('webform_submitted_data')->fields(array('nid', 'sid', 'cid', 'no', 'data'));
+		foreach ($values as $record)
+		{
+		  $query->values($record);
+		}
+		$query->execute();
+		$result=TRUE;	
+	}
+	catch (Exception $e)
+  {
+    $result=FALSE;
+  }
+  return $result;
+}
+
+function get_real_ip()
+{
+    if (!empty($_SERVER['HTTP_CLIENT_IP']))
+        return $_SERVER['HTTP_CLIENT_IP'];
+       
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+        return $_SERVER['HTTP_X_FORWARDED_FOR'];
+   
+    return $_SERVER['REMOTE_ADDR'];
+}
+
+function envia_mail($nombre, $emails, $mensaje, $subjectVal)
+{
+
+	// -------------------------- //
+	$from = 'envios@ariadna.com.co';
+	$fromSubject = 'Palace Resorts Travel';
+	//$emails = array();
+	//$emails[0] = $mail;
+	//$emails[0] = "sebastian.aristizabal@cdi-interactive.com"; 
+	//$emails[1] = "mariamely.leoni@ariadna.us";
+	//$emails[0] = "weddings@palaceresorts.com";
+	//$emails[1] = "fsamperi@gruporegio.com.mx";
+	$subject = $subjectVal;
+	send($subject,$mensaje,$from,$fromSubject,$emails);
+}
+
+function send($subject, $body, $from, $fromSubject, $arrayEmails)
+{
+	$mailSent = false;
+
+	try
+  {
+		//$pop = new POP3();
+		//$pop->Authorise('mail.ariadna.us', 110, 30, 'envios@ariadna.com.co', 'envio9685', 0);
+		$mail = new PHPMailer();
+		$mail->IsSMTP();
+		$mail->SMTPAuth = true;
+		$mail->Username = 'envios@ariadna.com.co';
+		$mail->Password = 'Colombia..2016';
+		$mail->Host = 'secure.emailsrvr.com';
+		$mail->Port = 465;
+		$mail->SMTPSecure = 'ssl'; 
+		$mail->SetFrom($from, $fromSubject);
+
+		if (is_array($arrayEmails))
+		{
+			foreach ($arrayEmails as $temp)
+			{
+				if($temp!='')
+					$mail->AddAddress($temp);
+			}
+		}
+
+		$mail->Subject = $subject;
+		$mail->MsgHTML($body);
+		$mailSent = $mail->Send();
+
+	}
+	catch (phpmailerException $e)
+  {
+		 return FALSE;
+	}
+	catch (Exception $e)
+  {
+    return FALSE;
+	}
+}
+
+function create_message($clients, $envio)
+{
+	$mensaje="<html><head>
+			<style> 
+		      	table{
+		      		border:6px solid #E5E5E5;
+		      		border-collapse:collapse;
+		      		
+		      	} 
+		      	tr{
+		      		border-bottom: 1px solid #CCCCCC;
+		      	}
+		      	td{
+		      		 border-right: 1px solid #CCCCCC;
+		      		 padding:5px;
+		      	}
+		      </style>
+			 </head><body>";
+		
+	$mensaje .= "<table>";
+	$mensaje .= "<tr><td>Agent Name: </td><td>{$_POST['agent_name']}</td></tr>";
+	$mensaje .= "<tr><td>Agency: </td><td>{$_POST['agency']}</td></tr>";
+	$mensaje .= "<tr><td>Travel Agency: </td><td>{$_POST['travel_agency']}</td></tr>";
+	$mensaje .= "<tr><td>E-mail: </td><td>{$_POST['e_mail']}</td></tr>";
+	$mensaje .= "<tr><td>Address: </td><td>{$_POST['address']}</td></tr>";
+	$mensaje .= "<tr><td>City: </td><td>{$_POST['city']}</td></tr>";
+	$mensaje .= "<tr><td>State: </td><td>{$_POST['state']}</td></tr>";
+	$mensaje .= "<tr><td>Zip: </td><td>{$_POST['zip']}</td></tr>";
+	$mensaje .= "<tr><td>Phone: </td><td>{$_POST['phone']}</td></tr>";
+	$mensaje .= "<tr><td>Fax: </td><td>{$_POST['fax']}</td></tr>";
+	$mensaje .= "<tr><td>Country: </td><td>{$_POST['country']}</td></tr>";
+	$mensaje .= "<tr><td>Preferred Resort: </td><td>{$_POST['preferred_resort']}</td></tr>";
+	$mensaje .= "<tr><td>Preferred Travel Date for Agent (Arr): </td><td>{$_POST['preferred_travel_date_for_agent_arr']}</td></tr>";
+	$mensaje .= "<tr><td>Preferred Travel Date for Agent (Dep): </td><td>{$_POST['preferred_travel_date_for_agent_dep']}</td></tr>";
+	$mensaje .= "<tr><td>Agent Companion Name: </td><td>{$_POST['agent_companion_name']}</td></tr>";
+	$mensaje .= "<tr><td>If traveling with child(ren), please list age(s): </td><td>{$_POST['if_traveling_with_children_please_list_ages']}</td></tr>";
+	$mensaje .= "<tr><td># of adults in room: </td><td>{$_POST['of_adults_in_room']}</td></tr>";
+	$mensaje .= "<tr><td># of children in room: </td><td>{$_POST['of_children_in_room']}</td></tr>";
+	$mensaje .= "<tr><td>Bedding: </td><td>{$_POST['bedding']}</td></tr>";
+	$mensaje .= "</table><br/><br/>";
+			
+	for ($i=0; $i < count($clients); $i++)
+	{
+		$j=$i+1;
+		$mensaje .= "<table>";
+		$mensaje .= "<tr><td>Client {$j}</td><td></td></tr>";
+		$mensaje .= "<tr><td>Name: </td><td>{$clients[$i][0]}</td></tr>";
+		$mensaje .= "<tr><td>Arrival Date: </td><td>{$clients[$i][1]}</td></tr>";
+		$mensaje .= "<tr><td>Departure Date: </td><td>{$clients[$i][2]}</td></tr>";
+		$mensaje .= "<tr><td>Resort: </td><td>{$clients[$i][3]}</td></tr>";
+		$mensaje .= "<tr><td>Confirmation #: </td><td>{$clients[$i][4]}</td></tr>";
+		$mensaje .= "</table><br/>";	
+	}
+	$mensaje .= "</body></html>";
+	return $mensaje;
+}
+
+function cdi_submit_form_form_alter(&$form, &$form_state, $form_id)
+{
+  /*if ($form_id == 'webform_client_form_190' || $form_id == 'webform_client_form_228' || $form_id == 'webform_client_form_230')
+  {
+  }
+  */
+}
+
+function cdi_custom_node_submit($form, &$form_state)
+{
+  //  drupal_set_message("Contenido creado con éxito.");
+    $form_state['redirect'] = "/";
+}

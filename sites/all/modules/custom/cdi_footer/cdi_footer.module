@@ -1,0 +1,45 @@
+<?php
+
+function cdi_footer_block_info()
+{
+    $blocks = array();
+    $blocks['cdi_footer'] = array(
+      'info' => t('Pro Agents Footer'),
+      'cache' => DRUPAL_CACHE_PER_ROLE,
+    );
+    return $blocks;
+}
+
+function cdi_footer_theme()
+{
+  return array(
+    'cdi_footer' => array(
+      'arguments' => array('newsletter' => '', 'footer'=>array()),
+      'template' => 'templates/cdi_footer',
+    ),
+  );
+}
+
+function cdi_footer_block_view($delta=''){
+    $block = array();
+    switch ($delta) {
+        case 'cdi_footer':
+            $block['content'] = _cdi_footer_content();
+            break;
+    }
+    return $block;
+}
+
+
+function _cdi_footer_content()
+{
+    $node = _cdi_custom_get_translation_node(19);
+    $nodeView = node_view($node, 'full', NULL);
+    $formulario = render($nodeView);
+
+    $footer = _cdi_custom_get_translation_node(20);
+
+    $html = theme("cdi_footer", array("formulario" => $formulario, "footer"=>$footer));
+    return $html;
+}
+?>

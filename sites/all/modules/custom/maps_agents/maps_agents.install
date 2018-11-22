@@ -1,0 +1,435 @@
+<?php
+
+/**
+ * Creamos el vocabulario de estados*/
+function _maps_agents_taxonomy_states() {
+  return array(
+    array('US-NM/New Mexico', 'zip_code'=>array(array('value'=>'87109'))),
+    array('US-AZ/Arizona', 'zip_code'=>array(array('value'=>'85298'), array('value'=>'85250'))),
+    array('US-CA/California', 'zip_code'=>array(array('value'=>'91506'), array('value'=>'93969'), array('value'=>'90814'), array('value'=>'92083'), array('value'=>'90067'), 
+    											array('value'=>'92706'), array('value'=>'93535'), array('value'=>'92886'), array('value'=>'93433'))),
+	array('US-NV/Nevada', 'zip_code'=>array(array('value'=>'89434'))),
+	array('US-MT/Montana'),
+	array('US-ND/North Dakota', 'zip_code'=>array(array('value'=>'58201'), array('value'=>'58103'))),
+	array('US-WY/Wyoming'),
+	array('US-SD/South Dakota', 'zip_code'=>array(array('value'=>'57301'))),
+	array('US-UT/Utah', 'zip_code'=>array(array('value'=>'84095'), array('value'=>'84770'))),
+	array('US-CO/Colorado', 'zip_code'=>array(array('value'=>'80237'), array('value'=>'81069'), array('value'=>'80111'), array('value'=>'80016'), array('value'=>'80451'))),
+	array('US-NE/Nebraska', 'zip_code'=>array(array('value'=>'68502'), array('value'=>'68144'), array('value'=>'68521'))),
+	array('US-MN/Minnesota', 'zip_code'=>array(array('value'=>'55311'), array('value'=>'55044'), array('value'=>'55124'), array('value'=>'56082'))),
+	array('US-WI/Wisconsin', 'zip_code'=>array(array('value'=>'53216'), array('value'=>'53545'))),
+	array('US-IA/Iowa', 'zip_code'=>array(array('value'=>'52402'), array('value'=>'51566'))),
+	array('US-IL/Illinois', 'zip_code'=>array(array('value'=>'61704'), array('value'=>'60005'), array('value'=>'61802'), array('value'=>'60638'), array('value'=>'60062'), 
+    										  array('value'=>'60633'), array('value'=>'60068'), array('value'=>'60714'), array('value'=>'60451'))),
+	array('US-KS/Kansas', 'zip_code'=>array(array('value'=>'66210'))),
+	array('US-OK/Oklahoma', 'zip_code'=>array(array('value'=>'73160'), array('value'=>'73099'))),
+	array('US-AR/Arkansas', 'zip_code'=>array(array('value'=>'72116'))),
+	array('US-MO/Missouri', 'zip_code'=>array(array('value'=>'63025'), array('value'=>'63776'), array('value'=>'63935'))),
+	array('US-TX/Texas', 'zip_code'=>array(array('value'=>'76501'), array('value'=>'78228'), array('value'=>'76116'), array('value'=>'76574'), array('value'=>'75070'), 
+    											array('value'=>'75165'), array('value'=>'76230'), array('value'=>'79423'), array('value'=>'76904'))),
+	array('US-LA/Louisiana'),
+	array('US-MI/Michigan', 'zip_code'=>array(array('value'=>'49444'), array('value'=>'49117'))),
+	array('US-IN/Indiana', 'zip_code'=>array(array('value'=>'47542'), array('value'=>'46037'), array('value'=>'46037'), array('value'=>'46037'), array('value'=>'46037'), 
+    										 array('value'=>'46037'), array('value'=>'46037'), array('value'=>'46037'), array('value'=>'46805'), array('value'=>'46158'))),
+	array('US-OH/Ohio', 'zip_code'=>array(array('value'=>'43085'))),
+	array('US-KY/Kentucky', 'zip_code'=>array(array('value'=>'42301'), array('value'=>'40503'))),
+	array('US-TN/Tennessee', 'zip_code'=>array(array('value'=>'37043'), array('value'=>'38016'))),
+	array('US-MS/Mississippi', 'zip_code'=>array(array('value'=>'39440'))),
+	array('US-AL/Alabama'),
+	array('US-FL/Florida', 'zip_code'=>array(array('value'=>'33028'), array('value'=>'33196'), array('value'=>'33186'))),
+	array('US-GA/Georgia', 'zip_code'=>array(array('value'=>'30078'), array('value'=>'30328'), array('value'=>'30035'), array('value'=>'30646'))),
+	array('US-SC/South Carolina', 'zip_code'=>array(array('value'=>'29483'))),
+	array('US-NC/North Carolina', 'zip_code'=>array(array('value'=>'27292'), array('value'=>'28792'))),
+	array('US-VA/Virginia', 'zip_code'=>array(array('value'=>'24540'), array('value'=>'22801'))),
+	array('US-WV/West Virginia'),
+	array('US-MD/Maryland', 'zip_code'=>array(array('value'=>'21035'), array('value'=>'21117'))),
+	array('US-PA/Pennsylvania', 'zip_code'=>array(array('value'=>'17601'), array('value'=>'18940'), array('value'=>'19133'), array('value'=>'18966'), array('value'=>'19064'), array('value'=>'17901'), 
+											      array('value'=>'18064'), array('value'=>'18615'), array('value'=>'19090'), array('value'=>'18951'), array('value'=>'17512'), array('value'=>'18954'), array('value'=>'17347'))),
+	array('US-NJ/New Jersey', 'zip_code'=>array(array('value'=>'08085'), array('value'=>'08009'), array('value'=>'07642'), array('value'=>'08514'), array('value'=>'7109'), array('value'=>'7731'))),
+	array('US-DE/Delaware'),
+	array('US-NY/New York', 'zip_code'=>array(array('value'=>'10018'), array('value'=>'10509'), array('value'=>'11234'), array('value'=>'11757'), array('value'=>'10010'), array('value'=>'11797'), 
+											  array('value'=>'11570'), array('value'=>'11577'), array('value'=>'10583'), array('value'=>'10036'), array('value'=>'14450'))),
+	array('US-CT/Connecticut', 'zip_code'=>array(array('value'=>'6071'))),
+	array('US-RI/Rhode Islan', 'zip_code'=>array(array('value'=>'02886'))),
+	array('US-VT/Vermont'),
+	array('US-NH/New Hampshire'),
+	array('US-MA/Massachusetts', 'zip_code'=>array(array('value'=>'02026'), array('value'=>'01778'), array('value'=>'01757'), array('value'=>'01021'))),
+	array('US-ME/Maine'),
+	array('US-OR/Oregon', 'zip_code'=>array(array('value'=>'97114'))),
+	array('US-WA/Washington', 'zip_code'=>array(array('value'=>'98258'))),
+	array('US-ID/Idaho'),
+	array('US-AK/Alaska'),
+	array('US-HI/Hawaii'),
+	);
+}
+
+
+/**Crea la taxonmia con su vocabulario*/
+function _maps_agents_create_taxonomy() {
+  // Creo el vocabulario.
+  taxonomy_vocabulary_save((object) array(
+    'name' => 'USA states',
+    'machine_name' => 'states',
+  ));
+ 
+  // Obtengo el Id del vocabulario recién creado.
+  $vid = taxonomy_vocabulary_machine_name_load('states')->vid;
+  
+  _maps_agents_create_field_taxonomy();  
+ 
+  // Creo los términos de la taxonomía.
+  $terminos = _maps_agents_taxonomy_states();
+  foreach ($terminos as $key => $term) {
+    $temp_term=array(
+      'name' => $term[0],
+      'vid' => $vid,
+    );
+		
+	if(isset($term['zip_code']) && count($term['zip_code'])>0){
+		$temp_term['zip_code_taxonomy']=array('und'=>$term['zip_code']);
+	}
+			
+	taxonomy_term_save((object) $temp_term);
+  }
+}
+
+function _maps_agents_create_field_taxonomy(){
+			
+	if(!db_table_exists('field_data_zip_code_taxonomy')){
+		$field = array(
+			'field_name' => 'zip_code_taxonomy',
+			'cardinality' => -1,
+			'type' => 'text',
+			'settings'    => array(
+		        'max_length' => 60,
+		      ),
+		);
+		field_create_field($field);
+	}
+	
+	// Attach the field to our taxonomy entity
+	$instance = array(
+		'field_name' => 'zip_code_taxonomy',
+		'label' => t('Zip Code'),
+		'type'        => 'text',
+		'widget' => array(
+			'type' => 'text_textfield',
+		),
+		'display' => array(
+	        'example_node_list' => array(
+	          'label' => 'hidden',
+	          'type' => 'hidden',
+	        ),
+	      ),
+		'entity_type' => 'taxonomy_term',
+		'bundle' => 'states',
+	);
+	field_create_instance($instance);
+}
+
+/**
+ * Implementa el hook_install().
+*
+ * Este hook es llamado cuando el usuario activael módulo por primera vez
+ *
+ * que hace?
+ * - Añade el campo body
+ * - Configura el campo body
+ * - Crea campos para el color la cantidad y una imagen
+ * - Crea las instancias para el campo color, cantidad e imageninstances.
+ *
+ * @see node_type_set_defaults()
+ * @see field_info_instance()
+ * @see field_update_instance()
+ * @see field_create_field()
+ * @see field_create_instance()
+ * @ingroup maps_agents
+ */
+function maps_agents_install() {
+  // Durante la instalación, la función de traducción t() no esta disponible, así que usamos get_t()
+  // para almacenar el nombre de la función de traducción
+  $t = get_t();
+  
+  //Creamos la taxonmia de los estados
+  _maps_agents_create_taxonomy();
+
+  // Definimos el tipo de nodo (tipo de contenido) mediante un array asociativo.
+  $maps_agents = array(
+    'type' => 'maps_agents',
+    'name' => $t('Agents of USA'),
+    // el parámetro 'base' le dice a Drupal el nombre que debe anteponer a las funciones hook
+    'base' => 'node_content',
+    'description' => $t('Type of content to create agents of USA states'),
+    'title_label' => $t('Title Agents'),
+    'custom' => TRUE,
+  );
+
+  // Una vez definido el tipo de contenido se completa con configuraciones por defecto
+  $content_type = node_type_set_defaults($maps_agents);
+  
+  // Guardamos el tipo de contenido
+  node_type_save($content_type);
+
+  // Creamos los campos que añadiremos a nuestro tipo de contenido, mediante un array creado
+  // con una función propia
+  foreach (_maps_agents_installed_fields() as $field) {
+    field_create_field($field);
+  }
+
+  // Creamos las instancias para los nuevos campos, mediante un array creado con una función propia
+  foreach (_maps_agents_installed_instances() as $instance) {
+    $instance['entity_type'] = 'node';
+    $instance['bundle'] = $maps_agents['type'];
+    field_create_instance($instance);
+  }
+}
+
+/**
+ * Devuelve un array asociativo con los campos del tipo de contenido
+ *
+ * Esta función se utilizará en los hook de instalación y desinstalación
+ *
+ * @return
+ *  An associative array specifying the fields we wish to add to our
+ *  new node type.
+ *
+ * @ingroup maps_agents
+ */
+function _maps_agents_installed_fields() {
+//cogemos el nombre de la función de traducción
+  $t = get_t();
+//devolvemos el array de los campos
+  return array(
+  	'maps_agents_image' => array(
+      'field_name' => 'maps_agents_image',
+      'type'       => 'image',
+      'cardinality' => 1,
+    ),
+    'maps_agents_name' => array(
+      'field_name' => 'maps_agents_name',
+      'cardinality' => 1,
+      'type'        => 'text',
+      'settings'    => array(
+        'max_length' => 60,
+      ),
+    ),
+    'maps_agents_profession' => array(
+      'field_name'  => 'maps_agents_profession',
+      'cardinality' => 1,
+      'type'        => 'text',
+      'settings'    => array(
+        'max_length' => 60,
+      ),
+    ),
+    'maps_agents_email' => array(
+      'field_name'  => 'maps_agents_email',
+      'cardinality' => 1,
+      'type'        => 'text',
+      'settings'    => array(
+        'max_length' => 60,
+      ),
+    ),
+    'maps_agents_phone' => array(
+      'field_name'  => 'maps_agents_phone',
+      'cardinality' => 1,
+      'type'        => 'text',
+      'settings'    => array(
+        'max_length' => 60,
+      ),
+    ),
+    'maps_agents_states' => array(
+      'field_name'  => 'maps_agents_states',
+      'cardinality' => -1,
+      'type'        => 'taxonomy_term_reference',
+      'settings'    => array(
+      	'allowed_values' => array(
+            array(
+                'vocabulary' => 'states',
+                'parent' => 0,
+            )
+        ),
+      ),
+    ),
+    'maps_agents_add_information' => array(
+      'field_name'  => 'maps_agents_add_information',
+      'cardinality' => 1,
+      'type'        => 'text_long',
+      'settings'    => array(
+      	'max_length' => ''
+      ),
+    ),
+  );
+}
+
+/**
+ * Devuelve un array asociativo con las instancias del tipo de contenido
+ *
+ * La instancia permite a Drupal saber que widget debe usar para permitir al usuario introducir
+ * indormación y saber como reaccionar en las diferentes vistas. Presentaremos una página que 
+ * use el tipo de contenido. 
+ *
+ * Esat función se utilizará tanto en la instalación como en la desinstalación del módulo
+ * maps_agents_install() and maps_agents_uninstall().
+ *
+ * @return
+ *  An associative array specifying the instances we wish to add to our new
+ *  node type.
+ *
+ * @ingroup maps_agents
+ */
+function _maps_agents_installed_instances() {
+  $t = get_t();
+  return array(
+  	'maps_agents_image' => array(
+      'field_name'  => 'maps_agents_image',
+      'label'       => $t('Upload an image:'),
+      'required'    => FALSE,
+      'widget' => array(
+        'type'    => 'image_image',
+        'weight'  => 2.10,
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => 'hidden',
+          'type' => 'image_link_content__thumbnail',
+        ),
+      ),
+      'required' => true,
+    ),
+    'maps_agents_name' => array(
+      'field_name'  => 'maps_agents_name',
+      'label' => $t('Agent Name'),
+      'type'        => 'text',
+      'widget'      => array(
+        'type'    => 'text_textfield',
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => 'hidden',
+          'type' => 'hidden',
+        ),
+      ),
+      'required' => true,
+    ),
+    'maps_agents_profession' => array(
+      'field_name'  => 'maps_agents_profession',
+      'label' => $t('Agent Profession'),
+      'type'        => 'text',
+      'widget'      => array(
+        'type'    => 'text_textfield',
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => 'hidden',
+          'type' => 'hidden',
+        ),
+      ),
+    ),
+    'maps_agents_email' => array(
+      'field_name'  => 'maps_agents_email',
+      'label' => $t('Email the agent'),
+      'type'        => 'text',
+      'widget'      => array(
+        'type'    => 'text_textfield',
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => 'hidden',
+          'type' => 'hidden',
+        ),
+      ),
+      'required' => true,
+    ),
+    'maps_agents_phone' => array(
+      'field_name'  => 'maps_agents_phone',
+      'label' => $t('Phone agent'),
+      'type'        => 'text',
+      'widget'      => array(
+        'type'    => 'text_textfield',
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => 'hidden',
+          'type' => 'hidden',
+        ),
+      ),
+      'required' => true,
+    ),
+    'maps_agents_states' => array(
+      'field_name'  => 'maps_agents_states',
+      'label' => $t('States of Agents'),
+      'type'        => 'taxonomy_term_reference',
+      'widget'      => array(
+        'type'    => 'options_buttons',
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => 'hidden',
+          'type' => 'hidden',
+        ),
+      ),
+      'required' => true,
+    ),
+    'maps_agents_add_information' => array(
+      'field_name'  => 'maps_agents_add_information',
+      'label' => $t('Additional Information'),
+      'type'        => 'text_long',
+      'widget'      => array(
+        'type'    => 'text_textarea',
+      ),
+      'display' => array(
+        'example_node_list' => array(
+          'label' => 'hidden',
+          'type' => 'hidden',
+        ),
+      ),
+    ),
+  );
+}
+
+/**
+ * Implementación del hook_uninstall().
+ *
+ * Este hook es llamado cuando el usuario, no sólo ha desactivado el módulo, sino además
+* lo desintala desde la pestaña "Desinstalar" en la página de módulos
+ *
+ *
+ * @ingroup maps_agents
+ */
+function maps_agents_uninstall() {	
+  // Recoge todos los nodos dados de alta para nuestro tipo de contenido, mientras que el módulo
+  // ha estado activado.  Utilizando el API de consulta de bbdd de Drupal, mediante db_query().
+  $sql = 'SELECT nid FROM {node} n WHERE n.type = :type';
+  $result = db_query($sql, array(':type' => 'maps_agents'));
+  $nids = array();
+  foreach ($result as $row) {
+    $nids[] = $row->nid;
+  }
+
+  // Borra todos los nodos de una sola
+  node_delete_multiple($nids);
+
+  // Realizamos un bucle que borra todos las instancias, los campos y los datos creados en la 
+  // instalación
+  foreach (array_keys(_maps_agents_installed_fields()) as $field) {
+    field_delete_field($field);
+  }
+
+  // Realizamos un bucle para quitar todas aquellas instancias pendientes de borrado del tipo de 
+  // contenido (como el campo body), borrandolos individualmente.
+  $instances = field_info_instances('node', 'maps_agents');
+  foreach ($instances as $instance_name => $instance) {
+    field_delete_instance($instance);
+  }
+
+  // Borramos nuestro tipo de contenido
+  node_type_delete('maps_agents');
+
+  // Purgamos toda la información correspondiente a los campos que acabamos de borrar
+  field_purge_batch(1000);
+  
+  //Obtengo el ID de la taxonmia creada por el modulo para borrar el vocablario
+	$vid = taxonomy_vocabulary_machine_name_load('states')->vid;
+	taxonomy_vocabulary_delete($vid);
+}
+?>

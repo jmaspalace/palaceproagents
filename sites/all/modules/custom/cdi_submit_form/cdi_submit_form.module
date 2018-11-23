@@ -58,6 +58,28 @@ function submit_form_send_info()
 	$emails=explode("#", base64_decode($_POST['sendEmail']));
 	array_pop($emails);
 	$idForm=$_POST['id_form'];
+  $sub_custom = "";
+ 
+$idForm2 = intval($idForm);
+  switch ($idForm2) {
+    case "230":
+        $sub_custom = "Ready Sell Stay CAN!";
+        break;
+    case "228":
+        $sub_custom = "Ready Sell Stay LATAM!";
+        break;
+    case "190":
+        $sub_custom = "Ready Sell Stay USA!";
+        break;
+    default:
+        $sub_custom = "Ready Sell Stay!";
+
+    }
+
+    //$sub_custom .= $idForm2;
+
+
+
   $next_serial= _cdi_submit_form_get_serial($idForm);
   try
   {
@@ -205,7 +227,9 @@ function submit_form_send_info()
         $message = create_message($clients, date('Y-m-d'));
         //En teoria hasta este punto funciona el script por que si se almacena el envio en drupal
        //luego del almacenamiento, probar que show con el envio de mail
-        envia_mail("Travel Agent", $emails, $message, "Ready Sell Stay");
+        //envia_mail("Travel Agent", $emails, $message, "Ready Sell Stay!");
+        envia_mail("Travel Agent", $emails, $message, $sub_custom);
+        
         $message = "Request successfully sent";
         $result=TRUE;
       }

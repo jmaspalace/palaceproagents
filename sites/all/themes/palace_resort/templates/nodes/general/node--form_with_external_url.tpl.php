@@ -49,7 +49,7 @@ print render($block_cdi_bradcrum['content']);
             $iframe = $iframe.'?crypt='.base64_encode($_SESSION['dataEncrypt']);
         }
         ?>
-        <iframe src="<?= $iframe ?>" width="1000px" height="1272px"></iframe>
+        <iframe src="<?= $iframe ?>" width="1000px" height="2000px" scrolling="no"></iframe>
     </div>
 </section>
 

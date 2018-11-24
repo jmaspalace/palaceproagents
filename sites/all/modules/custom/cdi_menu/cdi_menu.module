@@ -94,6 +94,7 @@ function _cdi_menu_get_items_menu()
             $contenSubMenu.= '<figure><img src="'.file_create_url($image).'" /></figure>';
           }
           $contenSubMenu .= '</li>';
+          $num = 0;
           foreach ($children AS $key => $chil)
           {
             $link = $chil['link'];
@@ -109,15 +110,29 @@ function _cdi_menu_get_items_menu()
                 {
                   $class .= 'selected';
                 }
+                
                 $submenu .= "<li class='col-lg-12 col-sm-12 col-md-12  image-link'>";
                 $data_content = isset($link_path) ? $link_path : '';
-                $submenu .= "<a data-content='".$data_content."' class='" . $class . "' href='" . $link_path . "'>" . $link_title . "</a>";
+                if ($num == 0){
+                  $submenu .= "<p></p>";
+                  $submenu .= "<a data-content='".$data_content."' class='" . $class . "' href='" . $link_path . "'>" . $link_title . "</a>";
+                
+                }else {
+                  $submenu .= "<a data-content='".$data_content."' class='" . $class . "' href='" . $link_path . "'>" . $link_title . "</a>";
+                  
+                }
+                $num++;
+
+                
+
                 $image = _cdi_get_image_menu($link['mlid']);
                 if (isset($image))
                 {
                   $submenu .= "<figure><img src='" . file_create_url($image) . "' /></figure>";
                 }
                 $submenu .= "</li>";
+              
+
               }
             }
           }

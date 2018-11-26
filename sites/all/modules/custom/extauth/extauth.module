@@ -98,6 +98,7 @@ function extauth_user_logout($account) {
  */
 function extauth_form_user_login_alter(&$form, $form_state) {
   unset($form['links']);
+  //Aqui llega cuando se hace el login
   $form['#validate'] = array('user_login_name_validate', 'extauth_login_validate', 'user_login_final_validate');
 }
 
@@ -228,6 +229,7 @@ function validateExternalUser($username, $password) {
 
     if($response->UserInfoResponse->HasErrors != 1)
     {
+      
       if(isset($response->UserInfoResponse->Data->UserInfo->Agency))
       {
         $_SESSION['agency']=TRUE;
@@ -235,6 +237,8 @@ function validateExternalUser($username, $password) {
         $_SESSION['agency_id'] = $response->UserInfoResponse->Data->UserInfo->Agency->Agency->AgencyId;
         $_SESSION['agent_id'] = $response->UserInfoResponse->Data->UserInfo->Agent->Agent->AgentId;
         $_SESSION['agency_country'] = $response->UserInfoResponse->Data->UserInfo->Agency->Agency->Country;
+        $_SESSION['full_data_agent'] = $response->UserInfoResponse->Data;
+        $_SESSION['full_name'] = $response->UserInfoResponse->Data->UserInfo->Agency->Agency->name;
 
       }
       elseif(isset($response->UserInfoResponse->Data->UserInfo->Agent))
@@ -244,6 +248,11 @@ function validateExternalUser($username, $password) {
         $_SESSION['agency_id'] = $response->UserInfoResponse->Data->UserInfo->Agent->Agencies->Agency->AgencyId;
         $_SESSION['agent_id'] = $response->UserInfoResponse->Data->UserInfo->Agent->Agent->AgentId;
         $_SESSION['agency_country'] = $response->UserInfoResponse->Data->UserInfo->Agent->Agencies->Agency->Country;
+        $_SESSION['full_data_agent'] = $response->UserInfoResponse->Data->UserInfo;
+        $_SESSION['full_name'] = $response->UserInfoResponse->Data->UserInfo->Agent->Agent->FirstName." ".$response->UserInfoResponse->Data->UserInfo->Agent->Agent->LastName;
+
+         
+         
 
       }
       $dataEncrypt=$username.'|'.$password;

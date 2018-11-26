@@ -25,10 +25,10 @@
       <div class="row">
         <div class="col-md-12 text-center">
     <?php
-      if ($user->uid) {
-                print '<p><strong>Welcome '.$user->name.'.</strong></p>';
-      }
-      
+      /*$full_name = $_SESSION['full_name'];
+          if ($user->uid) {
+             //print '<p><strong>Welcome '.$user->name.'.</strong></p>';
+             }*/
       ?>
     </div>
     </div>

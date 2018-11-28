@@ -53,18 +53,18 @@
             <?php print render($block_search); ?>
           </div>
           <a href='tel:<?= $header->field_telephone_he['und'][0]['value'] ?>' class='telephone'><?= $header->field_telephone_he['und'][0]['value'] ?></a>
+          <?php if (user_is_logged_in()):
+            /*echo "<pre>";
+            var_dump($_SESSION['full_data_agent']);
+              echo "</pre>";*/
 
+         $full_name = $_SESSION['full_name'];
+         print '<b><p style="font-size: .8rem; font-family: Open Sans; margin-top:18px">Welcome '.$full_name.'!</p>';
+        endif; ?>
         </div>
         <div class="row">
            <div class='col-md-12 col-sm-12 col-xs-12'>
-              <?php if (user_is_logged_in()): 
-                /*echo "<pre>";
-                var_dump($_SESSION['full_data_agent']);
-                  echo "</pre>";*/
 
-             $full_name = $_SESSION['full_name'];
-             print '<p style="font-size: 1rem; font-family: Miso-Light; margin-left: 25px;">Welcome '.$full_name.'!</p>';
-            endif; ?>
            </div>
          </div>
         <nav>

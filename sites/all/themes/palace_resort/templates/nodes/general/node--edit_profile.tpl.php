@@ -134,6 +134,6 @@ $url=$url."?crypt=".base64_encode($_SESSION['dataEncrypt']);
 ?>
 <section class="block-background container-fluid">
     <div id="form">
-        <iframe src="<?php print $url ?>" width="1000px" height="1272px"></iframe>
+        <iframe src="<?php print $url ?>" width="100%" height="1272px"></iframe>
     </div>
 </section>

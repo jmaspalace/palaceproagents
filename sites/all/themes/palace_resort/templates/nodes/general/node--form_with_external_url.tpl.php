@@ -22,7 +22,7 @@ $block_cdi_bradcrum = module_invoke('cdi_breadcrumb', 'block_view', 'cdi_breadcr
 print render($block_cdi_bradcrum['content']);
 ?>
 <section class="block-background container-fluid">
-    <div id="form">
+    <div id="form" style="width: 100%;">
         <?php
         $iframe = $node->field_url_iframe['und'][0]['value'];
         if (cdi_custom_get_market_by_language() == 'CA' && $node->field_url_iframe_ca['und'][0]['value'] != '')
@@ -48,8 +48,9 @@ print render($block_cdi_bradcrum['content']);
         {
             $iframe = $iframe.'?crypt='.base64_encode($_SESSION['dataEncrypt']);
         }
+
         ?>
-        <iframe src="<?= $iframe ?>" width="1000px" height="2000px" scrolling="no"></iframe>
+        <iframe src="<?= $iframe ?>" width="100%" height="2000px" scrolling="no"></iframe>
     </div>
 </section>
 

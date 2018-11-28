@@ -12,6 +12,13 @@ $datos = array();
 if (!empty($view->result[0]->_field_data["nid"]["entity"])) {
     $datos = $view->result[0]->_field_data["nid"]["entity"];
 }
+
+//print_r($datos);
+
+$f = array();
+
+$f = $view->style_plugin->rendered_fields[0]['field_imagen_logo_fo'];
+var_dump($f);
 ?>
 <section class="block-advantages container-fluid crown-text" id="advantages">
     <?php if (!cdi_custom_is_mobile()) : ?>

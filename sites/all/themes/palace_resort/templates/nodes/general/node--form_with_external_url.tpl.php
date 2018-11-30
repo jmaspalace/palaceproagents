@@ -50,7 +50,7 @@ print render($block_cdi_bradcrum['content']);
         }
 
         ?>
-        <iframe src="<?= $iframe ?>" width="100%" height="2000px" scrolling="no"></iframe>
+        <iframe src="<?= $iframe ?>" width="100%" height="2000px" scrolling="yes"></iframe>
     </div>
 </section>
 

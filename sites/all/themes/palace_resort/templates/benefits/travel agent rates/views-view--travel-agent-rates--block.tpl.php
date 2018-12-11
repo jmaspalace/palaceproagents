@@ -54,6 +54,9 @@ if (!empty($view->result[0]->_field_data["nid"]["entity"]))
             </table>
         </div>
     </article>
+    <article class="container text-center">
+      <h2 class="line center"><a href="https://www.palaceproagents.com/sites/default/files/DayPassRate_FINAL_2019.pdf" target="_blank" style="color: #00ad95;">View Travel Agent Day Pass Rates for 2019</a></h2>
+    </article>
     <article class="container list-rates">
         <div class="inludes-left">
             <h2>
